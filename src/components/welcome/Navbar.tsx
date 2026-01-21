@@ -55,7 +55,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="text-xl font-black tracking-tighter">
           <span className={isScrolled ? "text-yellow-400" : "text-emerald-950"}>
-            ANGGA<span className="text-yellow-500">.</span>
+            <span className="text-yellow-500">my</span>PORTFOLIO
           </span>
         </Link>
         
