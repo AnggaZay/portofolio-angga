@@ -77,7 +77,7 @@ export default function Profile() {
             <div>
               <h4 className="font-bold mb-10 uppercase tracking-widest text-[10px] text-gray-400 border-b border-gray-100 pb-4">Social Impact</h4>
               <div className="space-y-10">
-                <ExperienceItem company="PD IPM Pekalongan" role="Social-Impact Agency Lead" period="2024 — 2025" isHighlight={true} />
+                <ExperienceItem company="PD IPM Pekalongan" role="Secretary of the Tech-Com Division" period="2024 — 2025" isHighlight={true} />
                 <ExperienceItem company="PC IPM Wonokerto" role="Chairman" period="2021 — 2023" />
               </div>
             </div>

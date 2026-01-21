@@ -46,8 +46,7 @@ export default function Hero() {
             </h1>
             
             <p className="mt-4 text-slate-400 text-lg md:text-xl max-w-lg leading-relaxed font-medium">
-              I'm an experienced Product Designer with years in the field, 
-              collaborating with various companies and startups.
+              Visual Creative Specialist specializing in Brand & Marketing Design. Merging artistic intuition with AI-driven logic to build future-proof visual systems
             </p>
           </motion.div>
         </div>
@@ -71,7 +70,7 @@ export default function Hero() {
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute top-1/2 -right-12 bg-emerald-900 text-white px-6 py-2 rounded-full shadow-lg z-30"
             >
-              <span className="text-xs font-bold uppercase tracking-widest text-yellow-400">UI/UX Designer</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-yellow-400">Advertising Designer</span>
             </motion.div>
 
             <motion.div 
@@ -80,7 +79,7 @@ export default function Hero() {
               className="absolute bottom-32 -left-16 bg-white text-emerald-950 px-6 py-2 rounded-full shadow-xl z-30 flex items-center gap-2 border border-emerald-900/10"
             >
               <div className="w-1.5 h-1.5 bg-emerald-900 rounded-full animate-pulse shadow-[0_0_10px_#064e3b]" />
-              <span className="text-xs font-bold uppercase tracking-widest">Product Designer</span>
+              <span className="text-xs font-bold uppercase tracking-widest">Brand & Marketing Designer</span>
             </motion.div>
 
             <div className="absolute top-10 -right-4 z-30">
@@ -112,13 +111,13 @@ export default function Hero() {
               <div className="flex animate-marquee whitespace-nowrap">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="flex items-center gap-10 px-6 text-emerald-950 font-black text-xl md:text-2xl uppercase italic tracking-tighter">
-                    <span>App Design</span>
+                    <span>Advertising</span>
                     <span className="text-2xl text-emerald-800">✱</span>
-                    <span>Website Design</span>
+                    <span>Branding & Marketing</span>
                     <span className="text-2xl text-emerald-800">✱</span>
-                    <span>Dashboard</span>
+                    <span>Creative Designer</span>
                     <span className="text-2xl text-emerald-800">✱</span>
-                    <span>Wireframing</span>
+                    <span>Print Design</span>
                     <span className="text-2xl text-emerald-800">✱</span>
                   </div>
                 ))}
