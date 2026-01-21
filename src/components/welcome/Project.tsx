@@ -32,7 +32,7 @@ const projects = [
     year: "2024 — 2025",
     icon: <Users size={24} />,
     size: "md:col-span-1 md:row-span-2",
-    image: "/projects/ipm-cover.jpg", //
+    image: "/projects/ipm-cover.png", //
     desc: "Digitalizing community engagement for the next generation."
   },
   { 
@@ -42,7 +42,7 @@ const projects = [
     year: "2023",
     icon: <Zap size={24} />,
     size: "md:col-span-2 md:row-span-1",
-    image: "/projects/konnyusu-cover.jpg", //
+    image: "/projects/konnyusu-cover.png", //
     desc: "Exploring the edge of visual arts through experimental motion and color."
   },
 ];
