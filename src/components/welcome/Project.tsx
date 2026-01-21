@@ -22,7 +22,7 @@ const projects = [
     year: "2024 — 2026",
     icon: <Rocket size={24} />,
     size: "md:col-span-1 md:row-span-1",
-    image: "/projects/tabakery-cover.jpg", //
+    image: "/projects/tabakery-cover.png", //
     desc: "Toast container business branding & growth."
   },
   { 
