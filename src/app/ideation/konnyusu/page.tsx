@@ -1,3 +1,2 @@
-export default function Page() {
-  return <div>Ideation IPM Pekalongan</div>;
-}
+import JourneyKonnyusu from "@/components/ideation/journey-konnyusu";
+export default function Page() { return <JourneyKonnyusu />; }

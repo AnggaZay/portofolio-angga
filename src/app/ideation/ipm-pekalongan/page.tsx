@@ -1,3 +1,2 @@
-export default function Page() {
-  return <div>Ideation IPM Pekalongan</div>;
-}
+import JourneyIpm from "@/components/ideation/journey-ipm";
+export default function Page() { return <JourneyIpm />; }
