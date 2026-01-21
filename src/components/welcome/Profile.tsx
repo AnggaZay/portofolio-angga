@@ -69,9 +69,9 @@ export default function Profile() {
             <div>
               <h4 className="font-bold mb-10 uppercase tracking-widest text-[10px] text-gray-400 border-b border-gray-100 pb-4">Professional Path</h4>
               <div className="space-y-10">
-                <ExperienceItem company="BPR Arta Utama" role="Graphic Designer" period="2024 — Present" isHighlight={true} />
-                <ExperienceItem company="Freelance Designer" role="Brand & Marketing" period="2023 — 2024" />
-                <ExperienceItem company="CV. Multinet Komputer" role="Technical Specialist" period="2022 — 2023" />
+                <ExperienceItem company="BPR Arta Utama" role="Creative Designer" period="September 2024 — Januari 2026" isHighlight={true} />
+                <ExperienceItem company="Freelance Designer" role="Graphic Designer" period="Agustus 2023 — September 2024" />
+                <ExperienceItem company="CV. Multinet Komputer" role="Repair & Assembly Technician" period="Januari 2022 —  Agustus 2023" />
               </div>
             </div>
             <div>
