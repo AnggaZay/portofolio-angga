@@ -100,7 +100,8 @@ const ProductionVaultArta = () => {
         exit={{ opacity: 0, scale: 0.9 }}
         className={`group relative rounded-[2rem] overflow-hidden bg-slate-900 border border-white/10 shadow-2xl transition-all duration-500
           ${item.type === 'Postingan' ? 'w-[280px] aspect-[1080/1350]' : ''}
-          ${(item.type === 'Reels' || item.type === 'Profile' || item.type === 'Highlight') ? 'w-[250px] aspect-[1080/1920]' : ''}
+          ${item.type === 'Profile' ? 'w-[280px] aspect-square' : ''} 
+          ${(item.type === 'Reels' || item.type === 'Highlight') ? 'w-[250px] aspect-[1080/1920]' : ''}
           ${item.type === 'Website' ? 'w-full md:w-[800px] aspect-[1600/500]' : ''}
         `}
       >
