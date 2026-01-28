@@ -110,18 +110,16 @@ const ProductionVaultArta = () => {
         }
       } 
       // LOGIKA SPAN KHUSUS EXTEND (Grid 4)
-      else {
-        if (item.type === 'Highlight') {
-          colSpan = "col-span-1"; // 4 item per baris (Tegak 9:16)
-          aspect = "aspect-[1080/1920]";
-        } else if (item.type === 'Website') {
-          colSpan = "col-span-4"; // Full lebar (1 baris 1 web)
-          aspect = "aspect-[1600/500]";
-        } else {
-          colSpan = "col-span-2"; // Jaga-jaga kalau ada postingan di extend
-          aspect = "aspect-[1080/1350]";
-        }
-      }
+else {
+  if (item.type === 'Highlight') {
+    colSpan = "col-span-1"; // Tetap 1 kolom biar ramping
+    // Ubah dari 1080/1920 ke 9/21 biar lebih "jenjang"
+    aspect = "aspect-[9/21]"; 
+  } else if (item.type === 'Website') {
+    colSpan = "col-span-4"; 
+    aspect = "aspect-[1600/500]";
+  }
+}
 
       return (
         <motion.div
