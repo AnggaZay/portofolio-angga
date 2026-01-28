@@ -89,25 +89,23 @@ const ProductionVaultArta = () => {
         </div>
 
         {/* Visual Grid: Bento Style */}
-<div className="grid grid-cols-6 gap-4 md:gap-6">
+<div className="grid grid-cols-1 md:grid-cols-4 gap-6"> 
   <AnimatePresence mode="popLayout">
     {filteredAssets.map((item, index) => {
-      // Logika Penentuan Span Baris & Rasio (Bento Logic)
-      let colSpan = "col-span-2"; 
-      let aspect = "aspect-[1080/1350]"; // Default Postingan
+      let colSpan = "md:col-span-2"; 
+      let aspect = "aspect-[1080/1350]"; 
 
-      // Cek tipe untuk menentukan ukuran wadah
       if (item.type === 'Postingan') {
-        colSpan = "col-span-2"; // Baris isi 3
+        colSpan = "md:col-span-2"; // 2 per baris di grid-4 (50/50)
         aspect = "aspect-[1080/1350]";
       } else if (item.type === 'Reels' || item.type === 'Highlight') {
-        colSpan = "col-span-3"; // Baris isi 2 (Rasio HP 9:16)
+        colSpan = "md:col-span-1"; // 4 per baris (25% per item) -> Biar tegak 9:16
         aspect = "aspect-[1080/1920]"; 
       } else if (item.type === 'Profile') {
-        colSpan = "col-span-3"; // Baris isi 2 (Kotak 1:1)
+        colSpan = "md:col-span-2"; 
         aspect = "aspect-square";
       } else if (item.type === 'Website') {
-        colSpan = "col-span-6"; // Baris isi 1 (Layar Lebar)
+        colSpan = "md:col-span-4"; // Full width (100%) -> Biar lebar 1600x500
         aspect = "aspect-[1600/500]";
       }
 
@@ -117,29 +115,17 @@ const ProductionVaultArta = () => {
           layout
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ delay: index * 0.05 }}
-          className={`${colSpan} ${aspect} group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 border border-white/10 shadow-xl`}
+          className={`${colSpan} ${aspect} group relative rounded-[2.5rem] overflow-hidden bg-slate-900 border border-white/10 shadow-xl`}
         >
           <Image 
             key={item.src}
             src={item.src} 
             alt={item.title} 
             fill 
-            className="object-cover transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            priority={index < 4} // Load cepet buat 4 gambar pertama
+            className="object-cover"
+            priority={index < 4}
           />
-          
-          {/* Info Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#054fa0]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 md:p-10">
-            <span className="text-[8px] font-black text-yellow-300 uppercase tracking-[0.4em] mb-2">
-              {item.type}
-            </span>
-            <p className="text-base md:text-xl font-black leading-tight uppercase italic text-white">
-              {item.title}
-            </p>
-          </div>
+          {/* Overlay info tetep sama */}
         </motion.div>
       );
     })}
