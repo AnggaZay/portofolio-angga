@@ -1,80 +1,66 @@
 "use client";
 import React from 'react';
-import { Eye, Heart, Share2, Award, Zap } from 'lucide-react';
+import { Award, Star, Activity } from 'lucide-react';
 
 const TheMasterpiece = () => {
   return (
-    <section className="w-full py-32 bg-[#001F3F] text-white overflow-hidden">
+    <section className="w-full py-40 bg-[#FDFDFD] text-[#001F3F]">
       <div className="max-w-7xl mx-auto px-6">
         
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-12 gap-20 items-center">
           
-          {/* Visual Showcase (Kiri) */}
-          <div className="relative group">
-            {/* Dekorasi Salem Muda di Belakang */}
-            <div className="absolute -inset-4 bg-[#FFC4A4] opacity-20 blur-2xl group-hover:opacity-40 transition-opacity" />
+          {/* Visual Side */}
+          <div className="lg:col-span-7 relative">
+            {/* Dekorasi Grid Pattern */}
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-[radial-gradient(#FFC4A4_2px,transparent_2px)] [background-size:20px_20px] opacity-40" />
             
-            <div className="relative aspect-[4/5] bg-slate-800 rounded-[3.5rem] overflow-hidden border-8 border-white/5 shadow-2xl">
-              {/* Tempat foto tim atau desain terbaik */}
+            <div className="relative rounded-[3rem] overflow-hidden border-[12px] border-white shadow-[0_50px_100px_-20px_rgba(0,31,63,0.15)] bg-slate-100 aspect-video">
               <img 
                 src="/images/project/ipm/the-avengers.jpg" 
-                alt="IPM Avengers Team" 
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                alt="The Avengers Team" 
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
               />
-              
-              {/* Overlay Statitik (Vibe Data Driven) */}
-              <div className="absolute bottom-10 left-10 right-10 p-8 bg-[#001F3F]/80 backdrop-blur-md rounded-3xl border border-white/10">
-                <div className="flex justify-between items-center mb-4">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-[#FFC4A4]">Top Engagement Content</p>
-                    <Award size={16} className="text-[#FFC4A4]" />
-                </div>
-                <div className="flex gap-6">
-                    <div className="flex items-center gap-2">
-                        <Heart size={14} className="text-[#FFC4A4]" />
-                        <span className="text-sm font-black italic">High</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Share2 size={14} className="text-[#FFC4A4]" />
-                        <span className="text-sm font-black italic">Viral</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Eye size={14} className="text-[#FFC4A4]" />
-                        <span className="text-sm font-black italic">Reach</span>
-                    </div>
-                </div>
-              </div>
+            </div>
+
+            {/* Float Badge */}
+            <div className="absolute -bottom-10 -right-6 bg-[#001F3F] text-[#FFC4A4] p-8 rounded-3xl shadow-2xl max-w-[240px]">
+              <Activity className="mb-4" size={24} />
+              <p className="text-xs font-black uppercase tracking-widest leading-tight">
+                Meningkatkan engagement digital melalui validasi data visual.
+              </p>
             </div>
           </div>
 
-          {/* Konten Narasi (Kanan) */}
-          <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#FFC4A4] text-[#001F3F] rounded-full mb-8 rotate-2">
-              <Zap size={16} />
-              <span className="text-[10px] font-black uppercase tracking-widest">Industry Standard Output</span>
-            </div>
-            
-            <h2 className="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-10">
-              BUKTI NYATA <br /> 
-              <span className="text-[#FFC4A4]">SISTEM KERJA.</span>
+          {/* Text Side */}
+          <div className="lg:col-span-5">
+            <div className="w-16 h-[2px] bg-[#FFC4A4] mb-10" />
+            <h2 className="text-5xl md:text-6xl font-[900] tracking-tighter leading-[0.9] mb-8 uppercase">
+              Proven <br /> <span className="text-[#FFC4A4]">Expertise.</span>
             </h2>
+            <p className="text-xl font-medium text-slate-500 leading-relaxed mb-10">
+              Pengakuan dari alumni dan pimpinan umum bukan datang secara cuma-cuma, melainkan lahir dari standar kualitas yang konsisten kami jaga.
+            </p>
 
-            <div className="space-y-8 text-slate-300 font-medium">
-              <p className="text-xl leading-relaxed">
-                Kami tidak hanya mendesain; kami menciptakan <span className="text-white italic">impact</span>. Dengan standar kualitas yang melampaui kebiasaan organisasi, alumni dan pimpinan umum memberikan kepercayaan penuh—termasuk fasilitas ruang khusus bagi tim kami.
-              </p>
-              
-              <div className="p-8 border-l-2 border-[#FFC4A4] bg-white/5 rounded-r-3xl">
-                <p className="italic text-lg mb-4">
-                  "Standar agensi yang kami bawa mengubah pandangan bahwa bidang Media & IT bukan sekadar pelengkap, melainkan poros utama pergerakan organisasi."
-                </p>
-                <p className="text-xs font-black uppercase tracking-[0.3em] text-[#FFC4A4]">
-                  — The Avengers Era
-                </p>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="mt-1"><Award size={20} className="text-[#FFC4A4]" /></div>
+                <div>
+                  <p className="text-sm font-black uppercase tracking-tight">Special Room Facility</p>
+                  <p className="text-xs text-slate-400 font-bold uppercase">Kepercayaan Pimpinan Umum</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="mt-1"><Star size={20} className="text-[#FFC4A4]" /></div>
+                <div>
+                  <p className="text-sm font-black uppercase tracking-tight">Notice from Alumni</p>
+                  <p className="text-xs text-slate-400 font-bold uppercase">Validasi Standar Industri</p>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
+
       </div>
     </section>
   );

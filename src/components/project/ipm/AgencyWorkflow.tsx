@@ -1,105 +1,54 @@
 "use client";
 import React from 'react';
 import { 
-  ClipboardList, 
-  BarChart2, 
-  Settings2, 
-  LayoutDashboard, 
-  ArrowRight 
+  BarChart3, 
+  Workflow, 
+  Search, 
+  Cpu,
+  ArrowRight
 } from 'lucide-react';
 
 const AgencyWorkflow = () => {
-  const steps = [
-    {
-      title: "The Job Plan",
-      desc: "Menerapkan standarisasi agensi dalam perencanaan konten. Nggak ada lagi request dadakan.",
-      icon: <ClipboardList size={24} />,
-      label: "Phase 01"
-    },
-    {
-      title: "Technical Division",
-      desc: "Esekusi sesuai spesialisasi: Illustrator (Aman), Video (Dimas/Irfan), Advertising (Angga).",
-      icon: <Settings2 size={24} />,
-      label: "Phase 02"
-    },
-    {
-      title: "Data Engagement",
-      desc: "Menganalisis performa tiap konten. Kami bicara lewat angka, bukan sekadar estetika.",
-      icon: <BarChart2 size={24} />,
-      label: "Phase 03"
-    },
-    {
-      title: "Final Evaluation",
-      desc: "Laporan rutin ke pimpinan umum dengan standar profesionalisme industrial.",
-      icon: <LayoutDashboard size={24} />,
-      label: "Phase 04"
-    }
+  const processes = [
+    { title: "Job Planning", desc: "Sistem antrian konten terukur, meniadakan 'desain dadakan'.", icon: <Workflow size={24} /> },
+    { title: "Technical Dev", desc: "Eskalasi kualitas visual setara standar agensi periklanan.", icon: <Cpu size={24} /> },
+    { title: "Engagement Data", desc: "Menganalisis matriks interaksi untuk validasi strategi.", icon: <BarChart3 size={24} /> },
+    { title: "Field Research", desc: "Observasi langsung untuk memetakan minat audiens daerah.", icon: <Search size={24} /> },
   ];
 
   return (
-    <section className="w-full py-32 bg-white text-[#001F3F]">
+    <section className="w-full py-40 bg-white text-[#001F3F]">
       <div className="max-w-7xl mx-auto px-6">
         
-        <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
-          <div className="max-w-2xl">
-            <h3 className="text-xs font-black text-[#FFC4A4] bg-[#001F3F] inline-block px-4 py-1 rounded-full uppercase tracking-[0.4em] mb-8">
-              Work System
+        <div className="flex flex-col md:flex-row justify-between items-end mb-32 border-b-2 border-[#001F3F]/5 pb-16">
+          <div className="max-w-xl">
+            <h2 className="text-xs font-[900] uppercase tracking-[0.5em] text-[#FFC4A4] mb-8">System & Strategy</h2>
+            <h3 className="text-5xl md:text-7xl font-[900] tracking-tighter leading-none uppercase">
+              Operational <br /> <span className="text-transparent" style={{ WebkitTextStroke: '1.5px #001F3F' }}>Framework.</span>
             </h3>
-            <h4 className="text-5xl md:text-7xl font-black tracking-tighter leading-none mb-6 uppercase">
-              Bukan Sekadar <br /> 
-              <span className="text-[#FFC4A4] drop-shadow-[2px_2px_0px_#001F3F]">Organisasi.</span>
-            </h4>
-            <p className="text-xl font-medium text-slate-500 leading-relaxed">
-              Kami membagi peran secara presisi, memastikan setiap program kerja memiliki <span className="text-[#001F3F] underline decoration-[#FFC4A4] decoration-4">alur produksi yang terukur</span> layaknya agensi profesional.
-            </p>
           </div>
-          
-          <div className="hidden md:block">
-             <div className="w-32 h-32 border-4 border-[#FFC4A4] rounded-full flex items-center justify-center rotate-12">
-                <p className="text-[10px] font-black uppercase tracking-widest text-center leading-tight">
-                    Industrial <br /> Standard
-                </p>
-             </div>
-          </div>
+          <p className="max-w-xs text-sm font-bold text-slate-400 leading-relaxed text-right uppercase italic">
+            "Kami datang sebagai pimpinan, <br /> tapi kami bekerja sebagai praktisi."
+          </p>
         </div>
 
-        {/* Workflow Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {steps.map((step, i) => (
-            <div key={i} className="group p-10 bg-[#001F3F] rounded-[3rem] text-white hover:bg-[#FFC4A4] hover:text-[#001F3F] transition-all duration-700 relative overflow-hidden">
-              <div className="absolute -right-4 -top-4 opacity-5 group-hover:opacity-20 transition-opacity">
-                 {step.icon}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#001F3F]/5 border border-[#001F3F]/5">
+          {processes.map((proc, i) => (
+            <div key={i} className="group p-12 bg-white hover:bg-[#001F3F] transition-all duration-500 relative">
+              <div className="text-[#FFC4A4] mb-12 group-hover:scale-110 group-hover:text-white transition-all">
+                {proc.icon}
               </div>
-              
-              <span className="text-[10px] font-black uppercase tracking-widest opacity-40 mb-10 block">
-                {step.label}
-              </span>
-              
-              <div className="mb-8 w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-[#001F3F] group-hover:text-white transition-colors">
-                {step.icon}
-              </div>
-
-              <h5 className="text-2xl font-black uppercase tracking-tighter mb-4 italic">
-                {step.title}
-              </h5>
-              
-              <p className="text-sm font-medium leading-relaxed opacity-70 group-hover:opacity-100">
-                {step.desc}
+              <h4 className="text-xl font-black uppercase tracking-tighter mb-4 group-hover:text-white">
+                {proc.title}
+              </h4>
+              <p className="text-sm font-medium text-slate-500 leading-relaxed group-hover:text-white/60">
+                {proc.desc}
               </p>
-
-              <div className="mt-8 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all">
-                <ArrowRight size={20} />
+              <div className="mt-10 opacity-0 group-hover:opacity-100 transition-opacity">
+                <ArrowRight size={20} className="text-[#FFC4A4]" />
               </div>
             </div>
           ))}
-        </div>
-
-        {/* The Agency Commitment Quote */}
-        <div className="mt-20 p-16 bg-slate-50 border-2 border-[#001F3F]/5 rounded-[4rem] text-center">
-            <p className="text-[10px] font-black uppercase tracking-[0.5em] text-[#FFC4A4] mb-6">The Commitment</p>
-            <h2 className="text-3xl md:text-4xl font-black italic tracking-tight text-[#001F3F]">
-                "Kita nggak cuma bikin konten, kita bikin agensi di sini."
-            </h2>
         </div>
 
       </div>
