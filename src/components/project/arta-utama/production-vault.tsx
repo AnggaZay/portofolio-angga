@@ -88,39 +88,59 @@ const ProductionVaultArta = () => {
           </div>
         </div>
 
-        {/* Visual Grid */}
-<div className="flex flex-wrap gap-6 justify-center">
+        {/* Visual Grid: Bento Style */}
+<div className="grid grid-cols-6 gap-4 md:gap-6">
   <AnimatePresence mode="popLayout">
-    {filteredAssets.map((item) => (
-      <motion.div
-        key={item.id}
-        layout
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        className={`group relative rounded-[2rem] overflow-hidden bg-slate-900 border border-white/10 shadow-2xl transition-all duration-500
-          ${item.type === 'Postingan' ? 'w-[280px] aspect-[1080/1350]' : ''}
-          ${item.type === 'Profile' ? 'w-[280px] aspect-square' : ''} 
-          ${(item.type === 'Reels' || item.type === 'Highlight') ? 'w-[250px] aspect-[1080/1920]' : ''}
-          ${item.type === 'Website' ? 'w-full md:w-[800px] aspect-[1600/500]' : ''}
-        `}
-      >
-        <Image 
-          key={item.src} // Pakai src sebagai key biar React paksa render ulang gambarnya
-          src={item.src} 
-          alt={item.title} 
-          fill 
-          className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-        
-        {/* Info Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#054fa0]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8">
-          <span className="text-[8px] font-black text-yellow-300 uppercase tracking-[0.2em] mb-2">{item.type}</span>
-          <p className="text-lg font-black leading-tight uppercase italic">{item.title}</p>
-        </div>
-      </motion.div>
-    ))}
+    {filteredAssets.map((item, index) => {
+      // Logika Penentuan Span Baris (Bento Logic)
+      let colSpan = "col-span-2"; // Default untuk 3 kolom (2+2+2 = 6)
+      let aspect = "aspect-[1080/1350]"; // Default Postingan
+
+      if (item.type === 'Postingan') {
+        colSpan = "col-span-2"; // 3 item per baris
+        aspect = "aspect-[1080/1350]";
+      } else if (item.type === 'Reels' || item.type === 'Highlight') {
+        colSpan = "col-span-3"; // 2 item per baris (3+3 = 6)
+        aspect = "aspect-[1080/1920]";
+      } else if (item.type === 'Profile') {
+        colSpan = "col-span-3"; // 2 item per baris
+        aspect = "aspect-square";
+      } else if (item.type === 'Website') {
+        colSpan = "col-span-6"; // Full width untuk Web (Bento highlight)
+        aspect = "aspect-[1600/500]";
+      }
+
+      return (
+        <motion.div
+          key={item.id}
+          layout
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ delay: index * 0.05 }}
+          className={`${colSpan} ${aspect} group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 border border-white/10 shadow-xl`}
+        >
+          <Image 
+            key={item.src}
+            src={item.src} 
+            alt={item.title} 
+            fill 
+            className="object-cover transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+          
+          {/* Info Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#054fa0]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 md:p-10">
+            <span className="text-[8px] font-black text-yellow-300 uppercase tracking-[0.4em] mb-2">
+              {item.type}
+            </span>
+            <p className="text-base md:text-xl font-black leading-tight uppercase italic text-white">
+              {item.title}
+            </p>
+          </div>
+        </motion.div>
+      );
+    })}
   </AnimatePresence>
 </div>
 
