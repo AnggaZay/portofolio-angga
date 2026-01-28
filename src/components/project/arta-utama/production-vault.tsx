@@ -88,44 +88,64 @@ const ProductionVaultArta = () => {
           </div>
         </div>
 
-        {/* Visual Grid: Bento Style */}
-<div className="grid grid-cols-1 md:grid-cols-4 gap-6"> 
+        {/* Visual Grid: Dynamic Bento Logic */}
+<div className={`grid gap-4 md:gap-6 ${
+  filter === "Timeless" 
+    ? "grid-cols-1 md:grid-cols-4" // Layout khusus Extend (4 Kolom)
+    : "grid-cols-6"                // Layout Phase 1 & 2 (6 Kolom)
+}`}>
   <AnimatePresence mode="popLayout">
     {filteredAssets.map((item, index) => {
-      let colSpan = "md:col-span-2"; 
-      let aspect = "aspect-[1080/1350]"; 
+      // LOGIKA SPAN UNTUK PHASE 1 & 2 (Grid 6)
+      let colSpan = "col-span-2"; 
+      let aspect = "aspect-[1080/1350]";
 
-      if (item.type === 'Postingan') {
-        colSpan = "md:col-span-2"; // 2 per baris di grid-4 (50/50)
-        aspect = "aspect-[1080/1350]";
-      } else if (item.type === 'Reels' || item.type === 'Highlight') {
-        colSpan = "md:col-span-1"; // 4 per baris (25% per item) -> Biar tegak 9:16
-        aspect = "aspect-[1080/1920]"; 
-      } else if (item.type === 'Profile') {
-        colSpan = "md:col-span-2"; 
-        aspect = "aspect-square";
-      } else if (item.type === 'Website') {
-        colSpan = "md:col-span-4"; // Full width (100%) -> Biar lebar 1600x500
-        aspect = "aspect-[1600/500]";
+      if (filter !== "Timeless") {
+        if (item.type === 'Postingan') {
+          colSpan = "col-span-2"; // 3 item per baris
+          aspect = "aspect-[1080/1350]";
+        } else if (item.type === 'Reels' || item.type === 'Profile') {
+          colSpan = "col-span-3"; // 2 item per baris
+          aspect = item.type === 'Profile' ? "aspect-square" : "aspect-[1080/1920]";
+        }
+      } 
+      // LOGIKA SPAN KHUSUS EXTEND (Grid 4)
+      else {
+        if (item.type === 'Highlight') {
+          colSpan = "col-span-1"; // 4 item per baris (Tegak 9:16)
+          aspect = "aspect-[1080/1920]";
+        } else if (item.type === 'Website') {
+          colSpan = "col-span-4"; // Full lebar (1 baris 1 web)
+          aspect = "aspect-[1600/500]";
+        } else {
+          colSpan = "col-span-2"; // Jaga-jaga kalau ada postingan di extend
+          aspect = "aspect-[1080/1350]";
+        }
       }
 
       return (
         <motion.div
           key={item.id}
           layout
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className={`${colSpan} ${aspect} group relative rounded-[2.5rem] overflow-hidden bg-slate-900 border border-white/10 shadow-xl`}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ delay: index * 0.03 }}
+          className={`${colSpan} ${aspect} group relative rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden bg-slate-900 border border-white/10 shadow-xl`}
         >
           <Image 
             key={item.src}
             src={item.src} 
             alt={item.title} 
             fill 
-            className="object-cover"
-            priority={index < 4}
+            className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
-          {/* Overlay info tetep sama */}
+          
+          <div className="absolute inset-0 bg-gradient-to-t from-[#054fa0]/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 md:p-10">
+            <span className="text-[8px] font-black text-yellow-300 uppercase tracking-[0.4em] mb-2">{item.type}</span>
+            <p className="text-base md:text-xl font-black leading-tight uppercase italic text-white">{item.title}</p>
+          </div>
         </motion.div>
       );
     })}
