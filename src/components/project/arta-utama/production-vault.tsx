@@ -92,21 +92,22 @@ const ProductionVaultArta = () => {
 <div className="grid grid-cols-6 gap-4 md:gap-6">
   <AnimatePresence mode="popLayout">
     {filteredAssets.map((item, index) => {
-      // Logika Penentuan Span Baris (Bento Logic)
-      let colSpan = "col-span-2"; // Default untuk 3 kolom (2+2+2 = 6)
+      // Logika Penentuan Span Baris & Rasio (Bento Logic)
+      let colSpan = "col-span-2"; 
       let aspect = "aspect-[1080/1350]"; // Default Postingan
 
+      // Cek tipe untuk menentukan ukuran wadah
       if (item.type === 'Postingan') {
-        colSpan = "col-span-2"; // 3 item per baris
+        colSpan = "col-span-2"; // Baris isi 3
         aspect = "aspect-[1080/1350]";
       } else if (item.type === 'Reels' || item.type === 'Highlight') {
-        colSpan = "col-span-3"; // 2 item per baris (3+3 = 6)
-        aspect = "aspect-[1080/1920]";
+        colSpan = "col-span-3"; // Baris isi 2 (Rasio HP 9:16)
+        aspect = "aspect-[1080/1920]"; 
       } else if (item.type === 'Profile') {
-        colSpan = "col-span-3"; // 2 item per baris
+        colSpan = "col-span-3"; // Baris isi 2 (Kotak 1:1)
         aspect = "aspect-square";
       } else if (item.type === 'Website') {
-        colSpan = "col-span-6"; // Full width untuk Web (Bento highlight)
+        colSpan = "col-span-6"; // Baris isi 1 (Layar Lebar)
         aspect = "aspect-[1600/500]";
       }
 
@@ -127,6 +128,7 @@ const ProductionVaultArta = () => {
             fill 
             className="object-cover transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
             sizes="(max-width: 768px) 100vw, 50vw"
+            priority={index < 4} // Load cepet buat 4 gambar pertama
           />
           
           {/* Info Overlay */}
