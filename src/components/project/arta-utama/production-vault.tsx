@@ -106,6 +106,7 @@ const ProductionVaultArta = () => {
         `}
       >
         <Image 
+          key={item.src} // Pakai src sebagai key biar React paksa render ulang gambarnya
           src={item.src} 
           alt={item.title} 
           fill 
