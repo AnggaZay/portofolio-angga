@@ -46,7 +46,7 @@ export default function Hero() {
             </h1>
             
             <p className="mt-4 text-slate-400 text-lg md:text-xl max-w-lg leading-relaxed font-medium">
-              Spesialis Kreatif Visual yang mengkhususkan diri dalam Desain Merek & Pemasaran. Menggabungkan intuisi artistik dengan logika sistem  untuk membangun sistem visual yang fungsional dan berkelanjutan.
+              Spesialis Kreatif Visual dalam Desain Merek & Pemasaran. Menggabungkan intuisi artistik dengan logika sistem  untuk membangun sistem visual yang fungsional dan berkelanjutan.
             </p>
           </motion.div>
         </div>
