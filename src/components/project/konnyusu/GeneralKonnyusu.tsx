@@ -1,20 +1,19 @@
 "use client";
 import React from 'react';
-import { Users, MapPin, Milk, Rocket, Quote } from 'lucide-react';
+import { Users, MapPin, Milk, Rocket } from 'lucide-react';
 
 const GeneralKonnyusu = () => {
-  const team = [
-    { name: "Hiba Al-faridzi", role: "Project Manager", bg: "bg-[#FFD1E3]" },
-    { name: "Angga", role: "Digital Marketing & Legal", bg: "bg-[#3ABEF9]" },
-    { name: "Syamil Ahmad", role: "Video Editor", bg: "bg-[#FFD1E3]" },
-    { name: "Arif Mujahid", role: "Asst. Designer", bg: "bg-[#3ABEF9]" },
+  const highlights = [
+    { name: "Creative Designer", role: "Main Contributor", bg: "bg-[#FFD1E3]" },
+    { name: "Agency Ops", role: "Workflow Learning", bg: "bg-[#3ABEF9]" },
+    { name: "6 Months", role: "Project Duration", bg: "bg-[#FFD1E3]" },
+    { name: "Industry First", role: "Professional Milestone", bg: "bg-[#3ABEF9]" },
   ];
 
   return (
     <section className="w-full py-24 bg-[#F8FDFF] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Header Story */}
         <div className="grid lg:grid-cols-12 gap-16 mb-32 items-center">
           <div className="lg:col-span-7">
             <div className="flex items-center gap-3 mb-6">
@@ -40,23 +39,21 @@ const GeneralKonnyusu = () => {
             </div>
           </div>
 
-          {/* Team Cards */}
           <div className="lg:col-span-5 grid grid-cols-2 gap-4">
-            {team.map((member, i) => (
-              <div key={i} className={`${member.bg} p-6 rounded-[2.5rem] shadow-sm flex flex-col justify-between aspect-square group hover:-translate-y-2 transition-all duration-500`}>
+            {highlights.map((item, i) => (
+              <div key={i} className={`${item.bg} p-6 rounded-[2.5rem] shadow-sm flex flex-col justify-between aspect-square group hover:-translate-y-2 transition-all duration-500`}>
                 <div className="w-10 h-10 bg-white/50 rounded-full flex items-center justify-center">
-                  <Users size={18} className="text-slate-700" />
+                  <Rocket size={18} className="text-slate-700" />
                 </div>
                 <div>
-                  <p className="font-black text-slate-900 leading-tight mb-1 uppercase">{member.name}</p>
-                  <p className="text-[9px] font-bold text-slate-600 uppercase tracking-widest">{member.role}</p>
+                  <p className="font-black text-slate-900 leading-tight mb-1 uppercase">{item.name}</p>
+                  <p className="text-[9px] font-bold text-slate-600 uppercase tracking-widest">{item.role}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Narrative Context */}
         <div className="p-12 md:p-20 bg-white border-2 border-[#3ABEF9]/30 rounded-[4rem] relative overflow-hidden">
           <div className="absolute top-0 right-0 p-10 opacity-5">
             <Rocket size={200} className="text-[#ff4d94]" />
@@ -64,10 +61,10 @@ const GeneralKonnyusu = () => {
           <div className="max-w-3xl relative z-10">
             <h3 className="text-xs font-black text-[#ff4d94] uppercase tracking-[0.5em] mb-8">The Backstory</h3>
             <p className="text-2xl font-bold text-slate-800 leading-relaxed mb-6">
-              Awalnya saya hanyalah seorang desainer grafis lepas yang tiba-tiba ditawari proyek industri pertama di Semarang. Bersama tim yang "ajaib"—termasuk <span className="underline decoration-[#FFD1E3] decoration-4">Project Manager anak Akuntansi</span>—kami terjun ke dunia periklanan tanpa peta.
+              Konnyusu adalah titik balik saya mengenal industri periklanan secara nyata. Dipercaya oleh <span className="underline decoration-[#FFD1E3] decoration-4">Flexa Kreatif</span> sebagai desainer grafis lepas, saya justru mendapatkan lebih dari sekadar kontrak visual.
             </p>
             <p className="text-lg text-slate-500 leading-relaxed">
-              Dari sekadar urusan konten digital, kami nekat mengambil alih <span className="font-bold text-slate-900 italic">offline marketing</span> hingga urusan <span className="font-bold text-slate-900 italic">legalitas & dokumentasi</span>. Berbekal riset mandiri dan keinginan untuk terus memperbaiki, proyek ini menjadi saksi bahwa pengalaman terhebat seringkali lahir dari ketidaktahuan yang dieksekusi dengan berani.
+              Selama 6 bulan, saya menyaksikan dan terlibat langsung dalam bagaimana sebuah agensi periklanan baru dibangun dan dijalankan. Dari manajemen konten digital hingga strategi pemasaran offline, proyek ini mengajarkan saya bahwa pengalaman industri terbaik lahir dari eksekusi yang berani di tengah ketidaktahuan.
             </p>
           </div>
         </div>
