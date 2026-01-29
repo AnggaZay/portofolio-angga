@@ -33,7 +33,7 @@ const projects = [
     icon: <Users size={24} />,
     size: "md:col-span-1 md:row-span-2",
     image: "/projects/ipm-cover.png", //
-    desc: "Mendigitalisasi keterlibatan komunitas untuk generasi mendatang."
+    desc: "Mengubah komunitas menjadi basis agensi."
   },
   { 
     title: "Konnyusu", 
