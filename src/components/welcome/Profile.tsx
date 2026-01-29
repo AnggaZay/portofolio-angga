@@ -58,7 +58,7 @@ export default function Profile() {
             <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}
               className="text-4xl md:text-6xl font-light leading-[1.1] tracking-tight text-[#052219]"
             >
-              Brand & Marketing Designer with an <span className="italic font-serif">engineering mindset</span>. Expert in visual systems, powered by <span className="bg-[#F4D03F] px-2 font-medium text-black">AI-driven development</span>.
+              Desainer Merek & Pemasaran dengan pola pikir sistematis. <span className="italic font-serif">Ahli dalam sistem visual, </span>. serta didukung oleh pengembangan <span className="bg-[#F4D03F] px-2 font-medium text-black">dengan basis berkelanjutan.</span>.
             </motion.h2>
           </div>
         </div>
