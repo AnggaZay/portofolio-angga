@@ -13,7 +13,7 @@ const projects = [
     icon: <Briefcase size={24} />,
     size: "md:col-span-2 md:row-span-2",
     image: "/projects/arta-cover.png", // Path ke foto sampul lo
-    desc: "Transforming traditional banking into a modern digital experience."
+    desc: "Mengubah perbankan tradisional menjadi pengalaman digital modern."
   },
   { 
     title: "Tabakery", 
@@ -23,7 +23,7 @@ const projects = [
     icon: <Rocket size={24} />,
     size: "md:col-span-1 md:row-span-1",
     image: "/projects/tabakery-cover.png", //
-    desc: "Toast container business branding & growth."
+    desc: "Proyek berbasis aplikasi untuk bisnis kontainer di pinggir jalan."
   },
   { 
     title: "IPM Pekalongan", 
@@ -33,7 +33,7 @@ const projects = [
     icon: <Users size={24} />,
     size: "md:col-span-1 md:row-span-2",
     image: "/projects/ipm-cover.png", //
-    desc: "Digitalizing community engagement for the next generation."
+    desc: "Mendigitalisasi keterlibatan komunitas untuk generasi mendatang."
   },
   { 
     title: "Konnyusu", 
@@ -43,7 +43,7 @@ const projects = [
     icon: <Zap size={24} />,
     size: "md:col-span-2 md:row-span-1",
     image: "/projects/konnyusu-cover.png", //
-    desc: "Exploring the edge of visual arts through experimental motion and color."
+    desc: "Menjelajahi batas-batas seni visual melalui gerakan dan visual eksperimental."
   },
 ];
 
