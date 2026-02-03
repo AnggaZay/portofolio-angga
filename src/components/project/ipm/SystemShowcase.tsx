@@ -27,7 +27,7 @@ const SystemShowcase = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/40 to-transparent z-10 pointer-events-none" />
             
             <img 
-  src="/images/monday.png" 
+  src="/images/Monday.png" 
   alt="Monday.com Workflow IPM"
   className="w-full object-cover transition-all duration-700"
 />
