@@ -60,7 +60,7 @@ const IpmGallery = () => {
       <img 
         src={item.img} 
         alt={item.title} 
-        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+        className="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
       />
     </div>
   );
