@@ -1,8 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import NextImage from "next/image"; // Tambahkan ini buat cover
-import { ArrowUpRight, Briefcase, Rocket, Users, Zap } from "lucide-react";
+import NextImage from "next/image";
+import { ArrowUpRight, Briefcase, Rocket, Users, Utensils } from "lucide-react";
 
 const projects = [
   { 
@@ -12,38 +12,38 @@ const projects = [
     year: "2024 — 2026",
     icon: <Briefcase size={24} />,
     size: "md:col-span-2 md:row-span-2",
-    image: "/projects/arta-cover.png", // Path ke foto sampul lo
-    desc: "Mengubah perbankan tradisional menjadi pengalaman digital modern."
+    image: "/projects/arta-cover.png",
+    desc: "Mentransformasi perbankan tradisional menjadi ekosistem digital yang modern dan efisien."
   },
   { 
     title: "Tabakery", 
     slug: "tabakery",
-    category: "Business Strategy", 
+    category: "ERP System & Strategy", 
     year: "2024 — 2026",
     icon: <Rocket size={24} />,
     size: "md:col-span-1 md:row-span-1",
-    image: "/projects/tabakery-cover.png", //
-    desc: "Proyek berbasis aplikasi untuk bisnis kontainer di pinggir jalan."
+    image: "/projects/tabakery-cover.png", 
+    desc: "Sistem manajemen operasional dapur dan kasir yang terintegrasi penuh untuk bisnis F&B."
   },
   { 
     title: "IPM Pekalongan", 
     slug: "ipm-pekalongan",
-    category: "Community Infrastructure", 
+    category: "Organizational Framework", 
     year: "2024 — 2025",
     icon: <Users size={24} />,
     size: "md:col-span-1 md:row-span-2",
-    image: "/projects/ipm-cover.png", //
-    desc: "Mengubah komunitas menjadi basis agensi."
+    image: "/projects/ipm-cover.png", 
+    desc: "Menerapkan standar workflow industri kreatif ke dalam birokrasi organisasi pelajar."
   },
   { 
-    title: "Konnyusu", 
-    slug: "konnyusu",
-    category: "Visual Experiment", 
+    title: "Haha Rice Bowl", // UPDATE NAMA DI SINI
+    slug: "haharicebowl", // Pastikan slug ini sama dengan nama folder di app/project/
+    category: "Full Brand Identity", 
     year: "2023",
-    icon: <Zap size={24} />,
+    icon: <Utensils size={24} />, 
     size: "md:col-span-2 md:row-span-1",
-    image: "/projects/konnyusu-cover.png", //
-    desc: "Menjelajahi batas-batas seni visual melalui gerakan dan visual eksperimental."
+    image: "/projects/haharicebowl-cover.png", // Update path cover jika lo ganti nama filenya
+    desc: "Membangun identitas visual merk makanan praktis dari nol, mencakup logo hingga desain fisik outlet."
   },
 ];
 
@@ -69,9 +69,7 @@ export default function Project() {
                 index % 2 === 0 ? "bg-emerald-950 text-white" : "bg-yellow-400 text-emerald-950"
               }`}
             >
-              {/* --- IMAGE COVER LAYER --- */}
               <div className="absolute inset-0 z-0 opacity-40 group-hover:opacity-20 transition-opacity duration-700">
-                 {/* Lo bisa pakai placeholder dulu kalau fotonya belum ada */}
                  <div className="w-full h-full bg-black/20 absolute inset-0 z-10" />
                  <NextImage 
                     src={item.image} 
@@ -97,12 +95,11 @@ export default function Project() {
                 <h3 className="text-3xl md:text-4xl font-black tracking-tighter leading-none mb-4 uppercase group-hover:translate-x-2 transition-transform duration-500 drop-shadow-md">
                   {item.title}
                 </h3>
-                <p className="text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 max-w-xs font-medium line-clamp-2 bg-black/20 backdrop-blur-sm p-2 rounded-lg">
+                <p className="text-sm opacity-0 group-hover:opacity-100 transition-all duration-500 max-w-xs font-medium line-clamp-2 bg-black/40 backdrop-blur-md p-3 rounded-xl border border-white/10">
                   {item.desc}
                 </p>
               </div>
 
-              {/* Shine Effect */}
               <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 z-10" />
             </Link>
           ))}

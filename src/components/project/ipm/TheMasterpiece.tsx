@@ -1,61 +1,105 @@
 "use client";
 import React from 'react';
-import { Award, Star, Activity } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Quote, CheckCircle2, Eye } from 'lucide-react';
 
 const TheMasterpiece = () => {
   return (
-    <section className="w-full py-40 bg-[#FDFDFD] text-[#001F3F]">
+    <section className="w-full py-20 bg-[#D6E3A1] text-[#2D5A61] font-['Helvetica',_sans-serif] overflow-hidden">
+      
+      {/* 1. INDUSTRIAL TICKER (Teks Berjalan) */}
+      <div className="w-full bg-[#2D5A61] py-4 rotate-[-2deg] scale-110 mb-20 shadow-xl border-y-2 border-[#D6E3A1]">
+        <motion.div 
+          className="whitespace-nowrap flex gap-10"
+          animate={{ x: [0, -1000] }}
+          transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
+        >
+          {[...Array(10)].map((_, i) => (
+            <div key={i} className="flex items-center gap-4 text-[#D6E3A1] font-black uppercase tracking-widest text-lg">
+              <span>System Online</span>
+              <span className="w-2 h-2 rounded-full bg-[#D6E3A1]" />
+              <span>Legacy Established</span>
+              <span className="w-2 h-2 rounded-full bg-[#D6E3A1]" />
+              <span>No More "Desain Dadakan"</span>
+              <span className="w-2 h-2 rounded-full bg-[#D6E3A1]" />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6">
         
-        <div className="grid lg:grid-cols-12 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           
-          {/* Visual Side */}
-          <div className="lg:col-span-7 relative">
-            {/* Dekorasi Grid Pattern */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-[radial-gradient(#FFC4A4_2px,transparent_2px)] [background-size:20px_20px] opacity-40" />
-            
-            <div className="relative rounded-[3rem] overflow-hidden border-[12px] border-white shadow-[0_50px_100px_-20px_rgba(0,31,63,0.15)] bg-slate-100 aspect-video">
-              <img 
-                src="/images/project/ipm/the-avengers.jpg" 
-                alt="The Avengers Team" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-              />
+          {/* LEFT: THE EVIDENCE (FOTO INSIGHT) */}
+          <div>
+            <div className="mb-10">
+               <span className="px-4 py-2 border border-[#2D5A61] rounded-full text-[10px] font-black uppercase tracking-widest">
+                  Final Report 2024
+               </span>
+               <h2 className="text-6xl md:text-8xl font-[900] uppercase tracking-tighter leading-[0.9] mt-6">
+                  The <br /> Legacy.
+               </h2>
             </div>
 
-            {/* Float Badge */}
-            <div className="absolute -bottom-10 -right-6 bg-[#001F3F] text-[#FFC4A4] p-8 rounded-3xl shadow-2xl max-w-[240px]">
-              <Activity className="mb-4" size={24} />
-              <p className="text-xs font-black uppercase tracking-widest leading-tight">
-                Meningkatkan engagement digital melalui validasi data visual.
-              </p>
+            {/* GRID FOTO BUKTI */}
+            <div className="grid grid-cols-2 gap-4">
+               {/* Image Card 1 */}
+               <div className="group relative overflow-hidden rounded-[2rem] border-2 border-[#2D5A61] aspect-square bg-[#2D5A61]/10">
+                  {/* Overlay Hover */}
+                  <div className="absolute inset-0 bg-[#2D5A61]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                     <div className="bg-[#D6E3A1] p-3 rounded-full text-[#2D5A61]">
+                        <Eye size={24} />
+                     </div>
+                  </div>
+                  
+                  {/* GANTI SRC INI DENGAN FOTO INSIGHT LO */}
+                  <img 
+                    src="/images/project/ipm/insight1.jpg" 
+                    alt="Engagement Data Proof" 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                  />
+               </div>
+
+               {/* Image Card 2 */}
+               <div className="group relative overflow-hidden rounded-[2rem] border-2 border-[#2D5A61] aspect-square bg-[#2D5A61]/10">
+                  <div className="absolute inset-0 bg-[#2D5A61]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center">
+                     <div className="bg-[#D6E3A1] p-3 rounded-full text-[#2D5A61]">
+                        <Eye size={24} />
+                     </div>
+                  </div>
+
+                  {/* GANTI SRC INI DENGAN FOTO INSIGHT LO */}
+                  <img 
+                    src="/images/project/ipm/insight2.jpg" 
+                    alt="Audience Reach Proof" 
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                  />
+               </div>
             </div>
           </div>
 
-          {/* Text Side */}
-          <div className="lg:col-span-5">
-            <div className="w-16 h-[2px] bg-[#FFC4A4] mb-10" />
-            <h2 className="text-5xl md:text-6xl font-[900] tracking-tighter leading-[0.9] mb-8 uppercase">
-              Proven <br /> <span className="text-[#FFC4A4]">Expertise.</span>
-            </h2>
-            <p className="text-xl font-medium text-slate-500 leading-relaxed mb-10">
-              Pengakuan dari alumni dan pimpinan umum bukan datang secara cuma-cuma, melainkan lahir dari standar kualitas yang konsisten kami jaga.
-            </p>
+          {/* RIGHT: THE TESTIMONIAL / PHILOSOPHY */}
+          <div className="relative">
+            {/* Background Decor */}
+            <div className="absolute inset-0 bg-[#2D5A61]/5 rounded-[3rem] rotate-6 transform scale-90" />
+            
+            <div className="relative bg-[#D6E3A1] border-4 border-[#2D5A61] p-10 md:p-14 rounded-[3rem] shadow-[15px_15px_0px_0px_#2D5A61]">
+               <Quote size={48} className="text-[#2D5A61] mb-8 opacity-20" />
+               
+               <p className="text-2xl md:text-3xl font-bold leading-tight tracking-tight mb-10">
+                  "Sistem ini tidak hanya merapikan *feed* Instagram, tapi merubah cara pandang organisasi terhadap pentingnya **visual branding** dan **disiplin kerja**."
+               </p>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="mt-1"><Award size={20} className="text-[#FFC4A4]" /></div>
-                <div>
-                  <p className="text-sm font-black uppercase tracking-tight">Special Room Facility</p>
-                  <p className="text-xs text-slate-400 font-bold uppercase">Kepercayaan Pimpinan Umum</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="mt-1"><Star size={20} className="text-[#FFC4A4]" /></div>
-                <div>
-                  <p className="text-sm font-black uppercase tracking-tight">Notice from Alumni</p>
-                  <p className="text-xs text-slate-400 font-bold uppercase">Validasi Standar Industri</p>
-                </div>
-              </div>
+               <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#2D5A61] flex items-center justify-center text-[#D6E3A1]">
+                     <CheckCircle2 size={20} />
+                  </div>
+                  <div>
+                     <h5 className="text-lg font-[900] uppercase tracking-tighter">Voice of Alumni</h5>
+                     <p className="text-xs font-bold opacity-60 uppercase tracking-widest">PD IPM Pekalongan</p>
+                  </div>
+               </div>
             </div>
           </div>
 

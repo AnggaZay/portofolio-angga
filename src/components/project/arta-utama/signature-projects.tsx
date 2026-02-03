@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react';
-// Pastikan semua ikon diimport dari satu baris yang sama untuk menghindari error linting
-import { Zap, Sparkles, ArrowUpRight, Store, Megaphone, BadgePercent } from 'lucide-react';
+// Import ikon yang dibutuhkan. Sparkles sangat cocok untuk merepresentasikan AI.
+import { Sparkles, ArrowUpRight, Store } from 'lucide-react';
 
 const SignatureProjectsArta = () => {
   const projects = [
@@ -17,14 +17,14 @@ const SignatureProjectsArta = () => {
       stats: ["Bebas Pajak Reklame", "Branding Organik", "Gerakan Berbasis Kehadiran Merk"]
     },
     {
-      id: "warung-literasi",
+      id: "arta-virtual-studio", // ID diperbarui
       year: "2026",
-      title: "Warung Literasi",
-      tagline: "Elevating Financial Education",
-      description: "Evolusi dari sekadar promosi menjadi edukasi. Menggunakan gaya visual 'Photograph Studio' untuk menghadirkan narasi finansial yang lebih nyata, hangat, dan mudah diterima oleh masyarakat.",
-      icon: <Megaphone className="text-[#fffff]" size={24} />,
+      title: "Arta Virtual Studio", // Nama baru yang lebih profesional
+      tagline: "AI-Driven Visual Efficiency",
+      description: "Transformasi total proses produksi konten visual. Menggantikan sesi pemotretan fisik yang mahal dengan teknologi Generative AI untuk menghasilkan visual berkualitas studio yang hiper-realistis, cepat, dan efisien biaya.",
+      icon: <Sparkles className="text-[#ffffff]" size={24} />, // Icon Sparkles untuk representasi AI
       accent: "bg-[#054fa0]",
-      stats: ["Pemanfaatan Teknologi - AI", "Branding Naratif dan Lebih Emosional", "Gerakan Berbasis Dampak"]
+      stats: ["Zero Cost Photoshoot", "Generative AI Technology", "Unlimited Creative Assets"]
     }
   ];
 
@@ -42,6 +42,7 @@ const SignatureProjectsArta = () => {
               <div className="bg-white rounded-[2.8rem] p-10 h-full flex flex-col">
                 
                 <div className="flex justify-between items-start mb-12">
+                  {/* Icon Container */}
                   <div className={`p-4 rounded-2xl ${project.accent} bg-opacity-10`}>
                     {project.icon}
                   </div>
