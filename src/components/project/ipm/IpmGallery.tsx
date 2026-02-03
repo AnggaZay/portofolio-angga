@@ -36,7 +36,7 @@ const IpmGallery = () => {
   const GalleryCard = ({ item, aspect }: { item: any, aspect: string }) => (
     <div className={`group relative w-full ${aspect} rounded-[1.5rem] bg-[#2D5A61]/5 border-2 border-[#2D5A61] overflow-hidden mb-6 shadow-[6px_6px_0px_0px_rgba(45,90,97,0.2)] hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_0px_rgba(45,90,97,0.3)] transition-all duration-300`}>
       {/* Overlay Hover */}
-      <div className="absolute inset-0 bg-[#2D5A61]/95 transition-all duration-500 z-20 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100">
+      <div className="absolute inset-0 bg-[#2D5A61]/10 transition-all duration-500 z-20 flex flex-col justify-between p-6 opacity-0 group-hover:opacity-100">
         <div className="flex justify-between items-start">
           <div className="flex items-center gap-2 text-[#D6E3A1]">
             {item.icon}
