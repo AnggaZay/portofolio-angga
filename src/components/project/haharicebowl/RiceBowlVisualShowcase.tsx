@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image'; // Import komponen Image
 
 const RiceBowlVisualShowcase = () => {
   return (
@@ -15,63 +16,57 @@ const RiceBowlVisualShowcase = () => {
           </p>
         </div>
 
-        {/* BENTO GRID 4-COLUMN */}
+        {/* BENTO GRID */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[220px]">
           
-          {/* --- BARIS ATAS: BRANDING & STOREFRONT --- */}
-          {/* 1. LOGO STACK (PALING KIRI ATAS) */}
+          {/* LOGO STACK */}
           <div className="flex flex-col gap-4 md:col-span-1 md:row-span-2">
-            <div className="h-full bg-[#262626] rounded-3xl border-2 border-[#333] relative overflow-hidden group">
-                <div className="absolute top-4 left-4 z-10 bg-white text-black text-[8px] font-black px-2 py-1 rounded uppercase">Macro Logo</div>
-                <img src="/images/project/haharicebowl/logo-macro.webp" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            {[ 
+              { label: "Macro Logo", src: "/images/project/haharicebowl/logo-macro.webp" },
+              { label: "Micro Logo", src: "/images/project/haharicebowl/logo-micro.webp" }
+            ].map((img, i) => (
+              <div key={i} className="h-full bg-[#262626] rounded-3xl border-2 border-[#333] relative overflow-hidden group will-change-transform">
+                <div className="absolute top-4 left-4 z-10 bg-white text-black text-[8px] font-black px-2 py-1 rounded uppercase">
+                  {img.label}
+                </div>
+                <Image 
+                  src={img.src} 
+                  alt={img.label}
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* STOREFRONT - Ditambah Properti Priority karena ini aset utama */}
+          <div className="md:col-span-2 md:row-span-2 bg-[#262626] rounded-[2.5rem] border-2 border-[#333] relative overflow-hidden group will-change-transform">
+            <div className="absolute top-6 left-6 z-10 bg-[#FACC15] text-black text-[10px] font-black px-3 py-1 rounded uppercase">
+              Storefront [1:1]
             </div>
-            <div className="h-full bg-[#262626] rounded-3xl border-2 border-[#333] relative overflow-hidden group">
-                <div className="absolute top-4 left-4 z-10 bg-white text-black text-[8px] font-black px-2 py-1 rounded uppercase">Micro Logo</div>
-                <img src="/images/project/haharicebowl/logo-micro.webp" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <Image 
+              src="/images/project/haharicebowl/mockup-cart.webp" 
+              alt="Storefront"
+              fill
+              priority // Prioritaskan pemuatan aset tengah
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+
+          {/* BANNER */}
+          <div className="md:col-span-1 md:row-span-2 bg-[#262626] rounded-[2.5rem] border-2 border-[#EF4444] relative overflow-hidden group will-change-transform">
+            <div className="absolute top-4 left-4 z-10 bg-[#EF4444] text-white text-[8px] font-black px-2 py-1 rounded uppercase">
+              Banner [1:2]
             </div>
-          </div>
-
-          {/* 2. STOREFRONT (CENTER FOCUS) */}
-          <div className="md:col-span-2 md:row-span-2 bg-[#262626] rounded-[2.5rem] border-2 border-[#333] relative overflow-hidden group">
-            <div className="absolute top-6 left-6 z-10 bg-[#FACC15] text-black text-[10px] font-black px-3 py-1 rounded uppercase">Storefront [1:1]</div>
-            <img src="/images/project/haharicebowl/mockup-cart.webp" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-          </div>
-
-          {/* 3. BANNER (PALING KANAN ATAS) */}
-          <div className="md:col-span-1 md:row-span-2 bg-[#262626] rounded-[2.5rem] border-2 border-[#EF4444] relative overflow-hidden group">
-            <div className="absolute top-4 left-4 z-10 bg-[#EF4444] text-white text-[8px] font-black px-2 py-1 rounded uppercase">Banner [1:2]</div>
-            <img src="/images/project/haharicebowl/mockup-banner.webp" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
-          </div>
-
-          {/* --- BARIS BAWAH: MARKETING & PACKAGING --- */}
-          {/* 4. MENU P1 (PALING KIRI BAWAH) */}
-          <div className="md:col-span-1 md:row-span-2 bg-[#262626] rounded-3xl border-2 border-[#333] relative overflow-hidden group">
-            <div className="absolute top-4 left-4 z-10 bg-white text-black text-[8px] font-black px-2 py-1 rounded uppercase">Menu P1</div>
-            <img src="/images/project/haharicebowl/menu-1.webp" className="w-full h-full object-cover group-hover:scale-105" />
-          </div>
-
-          {/* 5. MENU P2 (SETELAH MENU P1) */}
-          <div className="md:col-span-1 md:row-span-2 bg-[#262626] rounded-3xl border-2 border-[#333] relative overflow-hidden group">
-            <div className="absolute top-4 left-4 z-10 bg-white text-black text-[8px] font-black px-2 py-1 rounded uppercase">Menu P2</div>
-            <img src="/images/project/haharicebowl/menu-2.webp" className="w-full h-full object-cover group-hover:scale-105" />
-          </div>
-
-          {/* 6. PAMFLET PROMOSI (TENGAH) */}
-          <div className="md:col-span-1 md:row-span-2 bg-[#262626] rounded-3xl border-2 border-[#333] relative overflow-hidden group">
-            <div className="absolute top-4 left-4 z-10 bg-[#EF4444] text-white text-[8px] font-black px-2 py-1 rounded uppercase">Pamphlet A4</div>
-            <img src="/images/project/haharicebowl/pamphlet.webp" className="w-full h-full object-cover group-hover:scale-105" />
-          </div>
-
-          {/* 7. PACKAGING STACK (PALING KANAN BAWAH) */}
-          <div className="flex flex-col gap-4 md:col-span-1 md:row-span-2">
-            <div className="h-full bg-[#262626] rounded-3xl border-2 border-[#333] relative overflow-hidden group">
-                <div className="absolute top-4 left-4 z-10 bg-[#FACC15] text-black text-[8px] font-black px-2 py-1 rounded uppercase">Pack V1</div>
-                <img src="/images/project/haharicebowl/mockup-box-1.webp" className="w-full h-full object-cover group-hover:scale-110" />
-            </div>
-            <div className="h-full bg-[#262626] rounded-3xl border-2 border-[#333] relative overflow-hidden group">
-                <div className="absolute top-4 left-4 z-10 bg-[#FACC15] text-black text-[8px] font-black px-2 py-1 rounded uppercase">Pack V2</div>
-                <img src="/images/project/haharicebowl/mockup-box-2.webp" className="w-full h-full object-cover group-hover:scale-110" />
-            </div>
+            <Image 
+              src="/images/project/haharicebowl/mockup-banner.webp" 
+              alt="Banner"
+              fill
+              sizes="(max-width: 768px) 100vw, 25vw"
+              className="object-cover group-hover:scale-110 transition-transform duration-1000"
+            />
           </div>
 
         </div>
