@@ -21,10 +21,10 @@ const IpmGallery = () => {
   ];
 
   const feedItems = [
-    { title: "Microblog 01", category: "Feed Design", dim: "1080x1350", icon: <Square size={16} />, img: "/images/project/ipm/feed1.jpg" },
-    { title: "Microblog 02", category: "Feed Design", dim: "1080x1350", icon: <Square size={16} />, img: "/images/project/ipm/feed2.jpg" },
-    { title: "Event Teaser", category: "Feed Design", dim: "1080x1350", icon: <Square size={16} />, img: "/images/project/ipm/feed3.jpg" },
-    { title: "Recruitment", category: "Feed Design", dim: "1080x1350", icon: <Square size={16} />, img: "/images/project/ipm/feed4.jpg" },
+    { title: "Microblog 01", category: "Feed Design", dim: "1080x1350", icon: <Square size={16} />, img: "/images/project/ipm/IPM1.jpg" },
+    { title: "Microblog 02", category: "Feed Design", dim: "1080x1350", icon: <Square size={16} />, img: "/images/project/ipm/IPM2.jpg" },
+    { title: "Event Teaser", category: "Feed Design", dim: "1080x1350", icon: <Square size={16} />, img: "/images/project/ipm/IPM3.jpg" },
+    { title: "Recruitment", category: "Feed Design", dim: "1080x1350", icon: <Square size={16} />, img: "/images/project/ipm/IPM4.jpg" },
   ];
 
   const tallItemsRight = [
