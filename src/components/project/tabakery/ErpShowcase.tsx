@@ -13,7 +13,7 @@ const ErpShowcase = () => {
     { id: 6, title: "Add Sales Screen", img: "/images/project/tabakery/6.png" },
     { id: 7, title: "Bill Screen", img: "/images/project/tabakery/7.png" },
     { id: 8, title: "Add Expense Screen", img: "/images/project/tabakery/8.png" },
-    { id: 9, title: "Profit AnalyticsActivation Screen", img: "/images/project/tabakery/9.png" },
+    { id: 9, title: "Activatin Screen", img: "/images/project/tabakery/9.png" },
   ];
 
   const [activeCard, setActiveCard] = useState(2);
