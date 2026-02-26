@@ -5,15 +5,15 @@ import { Figma, Smartphone, MousePointer2 } from 'lucide-react';
 const ErpShowcase = () => {
   // Pangkas jadi 9 Screen aja biar nggak sesek
   const screens = [
-    { id: 1, title: "Login System", img: "/images/project/tabakery/screen1.jpg" },
-    { id: 2, title: "Owner Dashboard", img: "/images/project/tabakery/screen2.jpg" },
-    { id: 3, title: "Inventory Master", img: "/images/project/tabakery/screen3.jpg" },
-    { id: 4, title: "Stock Opname", img: "/images/project/tabakery/screen4.jpg" },
-    { id: 5, title: "Point of Sales", img: "/images/project/tabakery/screen5.jpg" },
-    { id: 6, title: "Order Queue", img: "/images/project/tabakery/screen1.jpg" },
-    { id: 7, title: "Kitchen Display", img: "/images/project/tabakery/screen2.jpg" },
-    { id: 8, title: "Transaction History", img: "/images/project/tabakery/screen3.jpg" },
-    { id: 9, title: "Profit Analytics", img: "/images/project/tabakery/screen5.jpg" },
+    { id: 1, title: "Login Screen", img: "/images/project/tabakery/1.png" },
+    { id: 2, title: "Dashboard Tab", img: "/images/project/tabakery/2.png" },
+    { id: 3, title: "Sales Tab", img: "/images/project/tabakery/3.png" },
+    { id: 4, title: "Expense Tab", img: "/images/project/tabakery/4.png" },
+    { id: 5, title: "Inventory Screen", img: "/images/project/tabakery/5.png" },
+    { id: 6, title: "Add Sales Screen", img: "/images/project/tabakery/6.png" },
+    { id: 7, title: "Bill Screen", img: "/images/project/tabakery/7.png" },
+    { id: 8, title: "Add Expense Screen", img: "/images/project/tabakery/8.png" },
+    { id: 9, title: "Profit AnalyticsActivation Screen", img: "/images/project/tabakery/9.png" },
   ];
 
   const [activeCard, setActiveCard] = useState(2);
