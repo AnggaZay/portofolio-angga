@@ -84,7 +84,7 @@ const ErpShowcase = () => {
       {/* FIGMA LIVE PROTOTYPE */}
       <div className="max-w-7xl mx-auto px-6 mt-20 border-t border-[#333] pt-20">
           <div className="w-full h-[600px] md:h-[850px] bg-[#1A1A1A] rounded-[3rem] border-[6px] border-[#222] overflow-hidden relative shadow-2xl">
-              // KODE YANG BENAR
+              
 <iframe 
   title="Tabakery Hub Prototype"
   className="w-full h-full"
