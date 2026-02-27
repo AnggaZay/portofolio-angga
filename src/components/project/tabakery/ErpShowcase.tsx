@@ -88,7 +88,7 @@ const ErpShowcase = () => {
                 title="Tabakery Hub Prototype"
                 key="figma-live-embed"
                 className="w-full h-full"
-                src={figmaLink}
+                src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/TA47v7zpgM99ZUIqwWOVQ0/TabakeryHub?node-id=1-2&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=115%3A505"
                 allowFullScreen
                 loading="lazy"
               />
