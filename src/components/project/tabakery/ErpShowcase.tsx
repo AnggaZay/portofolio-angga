@@ -86,9 +86,8 @@ const ErpShowcase = () => {
           <div className="w-full h-[600px] md:h-[850px] bg-[#1A1A1A] rounded-[3rem] border-[6px] border-[#222] overflow-hidden relative shadow-2xl">
               <iframe 
                 title="Tabakery Hub Prototype"
-                key="figma-live-embed"
                 className="w-full h-full"
-                src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/TA47v7zpgM99ZUIqwWOVQ0/TabakeryHub?node-id=1-2&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=115%3A505"
+                src="https://embed.figma.com/proto/TA47v7zpgM99ZUIqwWOVQ0/TabakeryHub?node-id=1-2&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=115%3A505&embed-host=share"
                 allowFullScreen
                 loading="lazy"
               />
