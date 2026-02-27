@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
 
   // Tambahin ini buat "ngebuka pintu" buat iframe Figma
+  reactCompiler: true,
   async headers() {
     return [
       {
