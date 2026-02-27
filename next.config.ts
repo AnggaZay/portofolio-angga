@@ -1,11 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactCompiler: true,
-
-  // Tambahin ini buat "ngebuka pintu" buat iframe Figma
-  reactCompiler: true,
+  // INI KUNCINYA: Buka izin buat iframe Figma
   async headers() {
     return [
       {
