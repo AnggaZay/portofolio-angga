@@ -95,7 +95,12 @@ const ErpShowcase = () => {
       {/* FIGMA PROTOTYPE */}
       <div className="max-w-7xl mx-auto px-6 mt-20 border-t border-[#333] pt-20">
           <div className="w-full h-[600px] md:h-[800px] bg-[#1A1A1A] rounded-[3rem] border-4 border-[#333] overflow-hidden relative shadow-2xl">
-              <iframe width="800" height="450" src="https://embed.figma.com/proto/TA47v7zpgM99ZUIqwWOVQ0/TabakeryHub?node-id=1-2&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=115%3A505&embed-host=share" allowFullScreen></iframe>
+              <iframe 
+  title="Tabakery Hub Live Prototype"
+  className="w-full h-full border-none" 
+  src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FTA47v7zpgM99ZUIqwWOVQ0%2FTabakeryHub%3Fnode-id%3D1-2%26scaling%3Dscale-down%26content-scaling%3Dfixed%26page-id%3D0%253A1%26starting-point-node-id%3D115%253A505" 
+  allowFullScreen
+/>
               <div className="absolute bottom-8 right-8 bg-[#FACC15] text-black px-6 py-3 rounded-full text-[10px] font-black uppercase flex items-center gap-2 animate-bounce shadow-xl">
                   <MousePointer2 size={14} />
                   Simulate ERP Interface
