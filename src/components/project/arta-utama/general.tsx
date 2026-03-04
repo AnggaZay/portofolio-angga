@@ -5,8 +5,8 @@ import { Landmark, MapPin, Clock, Users2, ShieldAlert, Sparkles, Target, Zap, Im
 
 const GeneralArtaUtama = () => {
   return (
-    <section className="w-full py-32 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="w-full py-20 bg-white overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
         
         {/* Section 1: The Deep Dive Narrative (The Foundation Builder) */}
         <div className="grid lg:grid-cols-12 gap-16 mb-32 items-start">
@@ -37,7 +37,7 @@ const GeneralArtaUtama = () => {
               </p>
 
               <p>
-                Tantangannya bukan hanya teknis, tapi juga adaptasi budaya kerja. Bersama <span className="text-slate-900 font-bold italic text-red-600">Mbak Ita (Content Creator)</span>, saya merombak alur kerja manual menjadi sistemik melalui pengadaan <span className="text-[#054fa0] font-bold">Job Plan dan Laporan Bulanan</span>. Ini adalah perjalanan mengubah stigma bank yang "old" menjadi sahabat UMKM yang cerdas dan membumi melalui strategi <span className="italic font-bold">Smartly Grounded</span>.
+                Tantangannya bukan hanya teknis, tapi juga adaptasi budaya kerja. Bersama <span className="text-slate-900 font-bold italic text-red-600">Mbak Ita (Content Creator)</span>, saya merombak alur kerja manual menjadi sistemik melalui pengadaan <span className="text-[#054fa0] font-bold">Job Plan dan Laporan Bulanan</span>. Ini adalah perjalanan kreatif korporasi dalam menentukan visual dan strategi <span className="italic font-bold">Kampanye</span>.
               </p>
 
               {/* Metadata Proyek */}
