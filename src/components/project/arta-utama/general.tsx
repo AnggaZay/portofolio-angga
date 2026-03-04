@@ -6,7 +6,7 @@ import { Landmark, MapPin, Clock, Users2, ShieldAlert, Sparkles, Target, Zap, Im
 const GeneralArtaUtama = () => {
   return (
     <section className="w-full py-32 bg-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-8xl mx-auto px-6">
         
         {/* Section 1: The Deep Dive Narrative (5W) */}
         <div className="grid lg:grid-cols-12 gap-16 mb-32 items-start">
