@@ -49,7 +49,7 @@ const TabakeryHero = () => {
             </div>
 
             <p className="text-lg text-gray-400 max-w-md font-medium leading-relaxed">
-              Bukan sekadar gerobak roti, tapi ekosistem kuliner yang dijalankan oleh data. Integrasi penuh dari gudang sampai kasir.
+              Bukan sekadar ROTI BAKAR, tapi ekosistem kuliner yang dijalankan oleh data. Integrasi penuh dari gudang sampai kasir.
             </p>
           </div>
 
