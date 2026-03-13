@@ -1,160 +1,124 @@
-"use client";
-
 import React from 'react';
-import { Landmark, MapPin, Clock, Users2, ShieldAlert, Sparkles, Target, Zap, Image as ImageIcon, Video, ChevronRight } from 'lucide-react';
+import { MapPin, Clock, Users2, ShieldAlert } from 'lucide-react';
+import { generalArtaData } from "@/data/project/artaUtama/general";
 
 const GeneralArtaUtama = () => {
+  const { projectInfo, narrative, visuals } = generalArtaData;
+
   return (
-    <section className="w-full py-32 bg-white overflow-hidden">
-      <div className="max-w-8xl mx-auto px-6">
+    <section className="w-full py-12 lg:py-40 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
         
-        {/* Section 1: The Deep Dive Narrative (5W) */}
-        <div className="grid lg:grid-cols-12 gap-16 mb-32 items-start">
-          <div className="lg:col-span-7">
-            <div className="flex items-center gap-3 mb-10">
-              <span className="text-[#054fa0] font-black tracking-[0.4em] text-[10px] uppercase italic">BPR Arta Utama : Kantor Pusat Pekalongan</span>
-            </div>
-            
-            <h2 className="text-4xl md:text-[2.5rem] font-black text-slate-900 tracking-tighter leading-none mb-12">
-  {/* Stabilo Kuning Lurus */}
-  <span className="bg-[#ffff00] px-2 py-1">
-    Bank Perekonomian Rakyat
-  </span>
+        {/* 1. HEADER: Mega Typography */}
+<div className="max-w-6xl mb-16 lg:mb-32">
+  <div className="flex flex-col gap-2 mb-10 lg:mb-16 animate-in fade-in slide-in-from-left duration-1000">
+    <div className="flex items-center gap-4">
+      {/* Garis aksen tetap lebar di desktop */}
+      <div className="w-12 lg:w-40 h-[2px] lg:h-[3px] bg-[#054fa0]" /> 
+      <span className="text-[#054fa0] font-black tracking-[0.4em] lg:tracking-[0.6em] text-lg lg:text-2xl uppercase italic leading-none">
+        {projectInfo.name}
+      </span>
+    </div>
+    <span className="ml-16 lg:ml-44 text-[9px] lg:text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">
+      Creative Direction & Digital Transformation
+    </span>
+  </div>
   
-  <br />
+  {/* TAGLINE REVISI: text-5xl di mobile (Aman), lg:text-8xl di desktop (Dikecilkan) */}
+  <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 tracking-[-0.04em] lg:tracking-[-0.06em] leading-[0.85] lg:leading-[0.8]">
+    {projectInfo.tagline}
+  </h1>
+</div>
 
-  <span className="text-[#054fa0] text-6xl md:text-[6rem] block leading-[0.8] mt-6">
-    Arta Utama.
-  </span>
-</h2>
-
-            <div className="space-y-10 text-slate-600 font-medium leading-relaxed">
-              <p className="text-2xl text-slate-900 font-bold leading-tight tracking-tight">
-                "Membangun fondasi visual yang kuat agar pesan Arta Utama sampai ke nasabah dengan cara yang paling tepat."
-              </p>
-              
-              <p>
-                Ketika pertama kali masuk dan bekerja di <span className="text-slate-900 font-bold">BPR Arta Utama - Kantor Pusat Pekalongan</span>, tantangan terbesar bukanlah beban kerja, melainkan absennya fondasi. Sebagai seorang desainer grafis murni, saya menemukan fakta bahwa setiap aset komunikasi sebelumnya diproduksi tanpa adanya <span className="text-[#054fa0] font-bold italic">Brand Guidelines</span> maupun dokumentasi proyek yang baku.
-              </p>
-
-              <p>
-                Realita ini membuat identitas Arta Utama menjadi reaktif dan hanya mengikuti tren sesaat tanpa memiliki "wajah" dan "sifat" yang tetap. Dari sinilah saya mulai membuat struktur visual menyeluruh, menyusun kembali elemen-elemen fundamental , mulai dari tipografi hingga pola komunikasi untuk memastikan setiap piksel yang keluar dari Instrumen Periklanan BPR Arta Utama memiliki nilai strategis yang kuat.
-              </p>
-
-              <div className="flex flex-wrap gap-10 pt-6">
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2 text-red-600">
-                    <MapPin size={16} />
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Location</span>
-                  </div>
-                  <span className="text-sm font-bold text-slate-900 uppercase">KP. Pekalongan</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2 text-[#054fa0]">
-                    <Clock size={16} />
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Tenure</span>
-                  </div>
-                  <span className="text-sm font-bold text-slate-900 uppercase">2024 - Present</span>
-                </div>
-                <div className="flex flex-col gap-1">
-                  <div className="flex items-center gap-2 text-yellow-600">
-                    <Users2 size={16} />
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">Unity</span>
-                  </div>
-                  <span className="text-sm font-bold text-slate-900 uppercase">Tim Pusat Official</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Slot Foto Utama - Tim Pusat */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <div className="relative group">
-               <div className="absolute -inset-4 bg-slate-100 rounded-[3.5rem] rotate-3 group-hover:rotate-0 transition-transform duration-700" />
-               <div className="relative aspect-[4/5] bg-slate-200 rounded-[3rem] overflow-hidden border-[12px] border-white shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)]">
-                  <img 
-                    src="/images/project/arta-utama/team-pusat.jpeg" 
-                    alt="Tim Pusat BPR Arta Utama"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
-                  <div className="absolute bottom-0 left-0 right-0 p-10 text-white">
-                    <p className="text-[10px] font-black uppercase tracking-[0.4em] mb-2 text-blue-400">Collaboration Unit</p>
-                    <p className="text-2xl font-black italic tracking-tighter leading-none uppercase">Tim Pusat <br />BPR Arta Utama</p>
-                  </div>
-               </div>
+        {/* 2. MOBILE PHOTO: Crop Gepeng (Hanya muncul di < lg) */}
+        <div className="block lg:hidden w-full mb-12">
+          <div className="relative aspect-video rounded-[2rem] overflow-hidden border-[6px] border-white shadow-xl">
+            <img 
+              src={visuals.mainImage} 
+              alt={visuals.imageCaption} 
+              className="w-full h-full object-cover object-[50%_60%] grayscale"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <p className="text-[8px] font-black text-blue-400 uppercase tracking-widest mb-1">{visuals.unitLabel}</p>
+              <p className="text-lg font-black italic uppercase leading-none">{visuals.imageCaption}</p>
             </div>
           </div>
         </div>
 
-        {/* Section 2: Team Dynamics (The Collaboration) */}
-        <div className="grid lg:grid-cols-12 gap-12 mb-32 items-stretch">
-           <div className="lg:col-span-5 p-16 bg-[#054fa0] rounded-[4rem] text-white relative overflow-hidden flex flex-col justify-center">
-              <div className="absolute -bottom-10 -right-10 opacity-5 text-white">
-                <Users2 size={240} />
-              </div>
-              <h3 className="text-xs font-black text-yellow-300 uppercase tracking-[0.5em] mb-10 relative z-10 flex items-center gap-3">
-               Tim Pusat BPR Arta Utama
-              </h3>
-              <p className="text-4xl font-black leading-[1] mb-8 relative z-10 tracking-tighter">
-                Satu Tim, <br /> 
-                <span className="text-yellow-300">Satu Standar.</span>
-              </p>
-              <p className="text-slate-400 text-lg leading-relaxed mb-10 relative z-10 font-medium">
-                Berada di bawah komando <span className="text-white font-bold text-red-500">Bapak Herland Herlambang</span> (Kabag Operasional), saya bersama <span className="text-white font-bold">Rosima Tahtita</span> mengintegrasikan visual dan narasi agar setiap pesan sampai ke nasabah dengan presisi.
-              </p>
-              <div className="flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-white/40">
-                <span>Job Plan</span>
-                <ChevronRight size={14} />
-                <span>Eksekusi</span>
-                <ChevronRight size={14} />
-                <span>Evaluasi</span>
-              </div>
-           </div>
-
-           <div className="lg:col-span-7 rounded-[4rem] overflow-hidden border border-slate-100 shadow-sm relative group">
-              <img 
-                src="/images/project/arta-utama/office-activity.jpeg" 
-                alt="Aktivitas Tim Pusat"
-                className="w-full h-full object-cover group-hover:scale-150 transition-transform duration-1000"
-              />
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500 flex items-center justify-center">
-                 <div className="px-8 py-4 bg-white rounded-full shadow-2xl">
-                    <p className="text-[#054fa0] font-black uppercase tracking-[0.4em] text-[10px]">Insavaganza Utama Group 2025</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-
-        {/* Section 3: Mastery Matrix */}
-        <div className="space-y-20 border-t border-slate-100 pt-24">
-          <div className="flex flex-col items-center gap-6">
-            <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.8em]">Infrastruktur Teknis</h3>
-            <p className="text-slate-500 font-medium italic">Tools yang digunakan untuk mengeksekusi desain di BPR Arta Utama.</p>
-          </div>
+        {/* 3. CONTENT GRID: Tumpuk di mobile, Sampingan di desktop */}
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-32 items-start">
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {[
-              { name: 'Photoshop', icon: <ImageIcon size={22}/>, master: '95%' },
-              { name: 'Illustrator', icon: <Target size={22}/>, master: '92%' },
-              { name: 'CorelDraw', icon: <Landmark size={22}/>, master: '90%' },
-              { name: 'Premiere Pro', icon: <Video size={22}/>, master: '55%' },
-              { name: 'After Effects', icon: <Zap size={22}/>, master: '65%' },
-              { name: 'Generative AI', icon: <Sparkles size={22}/>, master: 'Optimized' },
-            ].map((tool, i) => (
-              <div key={i} className="group flex flex-col items-center p-10 rounded-[3rem] bg-slate-50 border border-transparent hover:border-[#054fa0] hover:bg-white transition-all duration-500 shadow-sm hover:shadow-2xl">
-                <div className="text-[#054fa0] mb-8 group-hover:scale-125 transition-transform duration-500">
-                    {tool.icon}
+          {/* SISI KIRI: Narasi & Deskripsi */}
+          <div className="w-full lg:w-7/12 order-2 lg:order-1">
+            <div className="space-y-10 lg:space-y-16 text-slate-600 font-medium leading-relaxed">
+              
+              {/* Quote Strategis: text-2xl di Mobile (Aman), lg:text-3xl di Desktop (Dikecilkan) */}
+<p className="text-2xl lg:text-3xl text-slate-900 font-bold leading-tight lg:leading-[1.1] tracking-tight italic border-l-4 border-[#054fa0] pl-6 lg:pl-10">
+  "{narrative.quote}"
+</p>
+              
+              <p className="text-base lg:text-xl text-slate-500 max-w-2xl">
+                {narrative.description}
+              </p>
+
+              {/* Info Bar Matrix */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-12 pt-12 border-t border-slate-100">
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-red-600">
+                    <MapPin size={18} />
+                    <span className="text-[10px] font-black uppercase tracking-widest">Location</span>
+                  </div>
+                  <span className="text-base font-bold text-slate-900 uppercase">{projectInfo.location}</span>
                 </div>
-                <p className="text-sm font-black text-slate-900 mb-3 uppercase tracking-tighter">{tool.name}</p>
-                <div className="px-3 py-1 bg-white rounded-full text-[9px] font-black text-slate-400 group-hover:text-[#054fa0] border border-slate-100 transition-colors uppercase tracking-widest shadow-inner">
-                    {tool.master}
+
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-[#054fa0]">
+                    <Clock size={18} />
+                    <span className="text-[10px] font-black uppercase tracking-widest">Tenure</span>
+                  </div>
+                  <span className="text-base font-bold text-slate-900 uppercase">{projectInfo.tenure}</span>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-emerald-600">
+                    <Users2 size={18} />
+                    <span className="text-[10px] font-black uppercase tracking-widest">Creative Unity</span>
+                  </div>
+                  <span className="text-base font-bold text-slate-900 uppercase">{projectInfo.collaboration}</span>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="flex items-center gap-2 text-yellow-600">
+                    <ShieldAlert size={18} />
+                    <span className="text-[10px] font-black uppercase tracking-widest">Project Role</span>
+                  </div>
+                  <span className="text-base font-bold text-slate-900 uppercase">{projectInfo.role}</span>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
 
+          {/* SISI KANAN: Desktop Photo (Sticky & Proporsional) */}
+          <div className="hidden lg:block lg:w-5/12 lg:sticky lg:top-32 order-1 lg:order-2">
+            <div className="relative group">
+              <div className="absolute -inset-6 bg-slate-50 rounded-[4rem] rotate-3 group-hover:rotate-0 transition-transform duration-1000" />
+              <div className="relative aspect-[4/5] bg-slate-200 rounded-[3.5rem] overflow-hidden border-[15px] border-white shadow-[0_50px_100px_-20px_rgba(0,0,0,0.2)]">
+                <img 
+                  src={visuals.mainImage} 
+                  alt={visuals.imageCaption} 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-80" />
+                <div className="absolute bottom-0 left-0 right-0 p-12 text-white">
+                  <p className="text-xs font-black uppercase tracking-[0.5em] mb-3 text-blue-400">{visuals.unitLabel}</p>
+                  <p className="text-3xl font-black italic tracking-tighter leading-none uppercase">{visuals.imageCaption}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

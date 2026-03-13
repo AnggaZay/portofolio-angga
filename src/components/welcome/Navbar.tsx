@@ -1,25 +1,15 @@
 "use client";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent, LayoutGroup } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
 export default function Navbar() {
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0;
-    
-    // Logika Auto-hide
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
-
-    // Logika Perubahan Bentuk (Threshold 50px)
-    if (latest > 50) {
+    // Threshold sedikit kita naikin biar transisinya gak terlalu sensitif di awal
+    if (latest > 100) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
@@ -28,68 +18,77 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Projects", href: "#work" },
-    { name: "Ideation", href: "#ideation" },
     { name: "Profile", href: "#profile" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <motion.nav 
-      variants={{
-        visible: { y: 0, opacity: 1 },
-        hidden: { y: -100, opacity: 0 },
-      }}
-      //animate={hidden ? "hidden" : "visible"}
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} // Bezier curve biar smooth
-      className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none"
-    >
-      <motion.div 
-        layout // Ini kunci biar transisi width & rounded-nya smooth banget
-        className={`
-          flex justify-between items-center transition-all duration-500 pointer-events-auto
-          ${isScrolled 
-            ? "mt-4 w-[90%] md:w-[70%] lg:w-[60%] px-8 py-3 rounded-full bg-emerald-950/90 backdrop-blur-xl shadow-2xl border border-white/10" 
-            : "mt-0 w-full px-6 md:px-16 lg:px-32 py-6 bg-white border-b border-slate-100"}
-        `}
-      >
-        {/* Logo */}
-        <Link href="/" className="text-xl font-black tracking-tighter">
-          <span className={isScrolled ? "text-yellow-400" : "text-emerald-950"}>
-            <span className="text-yellow-500">my</span>PORTFOLIO
-          </span>
-        </Link>
-        
-        {/* Nav Links */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name}
-              href={link.href} 
-              className={`
-                text-[10px] font-bold uppercase tracking-[0.3em] transition-colors
-                ${isScrolled 
-                  ? "text-slate-300 hover:text-yellow-400" 
-                  : "text-slate-400 hover:text-emerald-950"}
-              `}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-
-        {/* Action Button */}
-        <a 
-          href="mailto:hello@angga.com" 
+    <LayoutGroup>
+      <nav className="fixed top-0 left-0 right-0 z-[100] flex justify-center pointer-events-none p-0 md:p-4">
+        <motion.div 
+          layout // Ini kunci utama keajaiban transisi Framer Motion
+          initial={false}
+          transition={{
+            layout: { 
+              type: "spring", 
+              stiffness: 120, // Lebih rendah biar gak terlalu "ngeper"
+              damping: 24,    // Redaman lebih smooth
+              mass: 1
+            },
+            // Transisi untuk warna dan filter agar tetap sinkron
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1] 
+          }}
           className={`
-            text-[10px] font-bold uppercase tracking-widest px-6 py-2 rounded-full transition-all
+            flex justify-between items-center pointer-events-auto relative
             ${isScrolled 
-              ? "bg-yellow-400 text-emerald-950 hover:bg-yellow-300" 
-              : "border-b-2 border-yellow-500 text-emerald-950 hover:text-yellow-600"}
+              ? "w-[90%] max-w-[900px] px-8 py-3 rounded-full bg-emerald-950/90 backdrop-blur-2xl shadow-2xl border border-white/10 mt-2" 
+              : "w-full max-w-full px-10 md:px-20 py-6 rounded-none bg-white border-b border-black/5 mt-0"}
           `}
         >
-          Let's Talk
-        </a>
-      </motion.div>
-    </motion.nav>
+          {/* Logo dengan layout prop biar ikut transisi posisi */}
+          <motion.div layout className="shrink-0">
+            <Link href="/" className="text-xl font-[1000] tracking-tighter">
+              <span className={isScrolled ? "text-white" : "text-emerald-950"}>
+                <span className="text-yellow-500 italic">ANGGA</span>ZAY.
+              </span>
+            </Link>
+          </motion.div>
+          
+          {/* Nav Links - Desktop Only */}
+          <motion.div layout className="hidden md:flex items-center gap-10">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name}
+                href={link.href} 
+                className={`
+                  text-[10px] font-black uppercase tracking-[0.3em] transition-colors duration-500
+                  ${isScrolled 
+                    ? "text-gray-400 hover:text-yellow-400" 
+                    : "text-gray-400 hover:text-emerald-950"}
+                `}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </motion.div>
+
+          {/* Action Button */}
+          <motion.div layout className="shrink-0">
+            <a 
+              href="mailto:anggazaidan4@gmail.com" 
+              className={`
+                text-[10px] font-black uppercase tracking-widest px-8 py-3 rounded-full transition-all duration-500 active:scale-90 inline-block
+                ${isScrolled 
+                  ? "bg-yellow-400 text-emerald-950 hover:bg-white" 
+                  : "bg-emerald-950 text-white hover:bg-yellow-500 shadow-lg"}
+              `}
+            >
+              Let's Talk
+            </a>
+          </motion.div>
+        </motion.div>
+      </nav>
+    </LayoutGroup>
   );
 }

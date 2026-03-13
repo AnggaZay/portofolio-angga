@@ -1,228 +1,125 @@
-"use client";
-
 import React, { useState } from 'react';
-import { 
-  Target, Lightbulb, Zap, Award, Camera, Layout, 
-  CheckCircle2, ShieldAlert, Cpu, Sparkles, 
-  Users2, MessageSquare, ClipboardList, Briefcase
-} from 'lucide-react';
+import { Target, Zap, CheckCircle2, AlertCircle } from 'lucide-react';
+import { phaseArtaData } from "@/data/project/artaUtama/phase";
 
 const PhaseArtaUtama = () => {
-  const [activePhase, setActivePhase] = useState('2024');
-  const [activeMode, setActiveMode] = useState('solution');
-
-  const data = {
-    "2024": {
-      year: "Sept 2024 - Des 2025",
-      theme: "SMARTLY GROUNDED",
-      solution: {
-        points: [
-          { 
-            title: "Tantangan Internal", 
-            desc: "Ketiadaan identitas visual membuat desain bersifat subjektif & reaktif. Revisi atasan sering bertabrakan karena tidak ada panduan baku. Divisi bergerak individual tanpa jobplan.", 
-            icon: <ShieldAlert className="text-red-500" /> 
-          },
-          { 
-            title: "Tantangan Eksternal", 
-            desc: "Visual terlalu kaku/korporat sehingga tercipta gap dengan nasabah UMKM. Brand belum memiliki karakter khas di mata audience.", 
-            icon: <Target className="text-[#054fa0]" /> 
-          },
-          { 
-            title: "Solusi Struktur", 
-            desc: "Pengadaan Brand Identity, Jobplan, Rencana Kerja, hingga Laporan Mingguan yang disepakati bersama secara kolektif.", 
-            icon: <ClipboardList className="text-emerald-500" /> 
-          },
-          { 
-            title: "Solusi Komunikasi", 
-            desc: "Membentuk style 'Memphis Corporate Flex' & komunikasi yang lebih humble hasil kolaborasi dengan konten kreator.", 
-            icon: <MessageSquare className="text-yellow-300" /> 
-          }
-        ]
-      },
-      // Update pada bagian 'execution' di objek data (Phase 2024)
-execution: {
-  points: [
-    { 
-      title: "Alur Kolaborasi", 
-      desc: "Sinergi harian bersama Konten Kreator untuk sinkronisasi visual-narasi, dengan pelaporan wajib langsung ke Kabag Operasional (Pak Herland).", 
-      icon: <Users2 className="text-[#054fa0]" /> 
-    },
-    { 
-      title: "Output Rutin Mingguan", 
-      desc: "Manajemen aset intensitas tinggi: 1x Konten Literasi, 1x Konten Produk, 2x Foto Profil, dan 1x Cover Reels setiap pekan.", 
-      icon: <Zap className="text-yellow-300" /> 
-    },
-    { 
-      title: "Produksi Banner UMKM", 
-      desc: "Eksekusi masif 5 - 10 desain banner UMKM per minggu sebagai bagian dari program kerja strategis yang diajukan.", 
-      icon: <Layout className="text-red-600" /> 
-    },
-    { 
-      title: "Desain Event & Cetak", 
-      desc: "Menangani skala besar: Branding event tahunan (Panggung, Merchandise, Photobooth) hingga kebutuhan cetak rilis produk baru.", 
-      icon: <Cpu className="text-slate-400" /> 
-    }
-  ]
-},
-      // Update pada bagian 'achievement' di objek data (Phase 2024)
-achievement: {
-  points: [
-    { 
-      title: "Arsitek Standar Visual", 
-      desc: "Memutus siklus revisi subjektif dengan menciptakan Brand Guidelines resmi pertama, mempercepat proses approval desain secara signifikan.", 
-      icon: <CheckCircle2 className="text-emerald-500" /> 
-    },
-    { 
-      title: "Ekspansi Brand Organik", 
-      desc: "Menyebarkan identitas Arta Utama di ratusan titik UMKM melalui program 5-10 Banner Gratis per minggu tanpa biaya pajak reklame.", 
-      icon: <Award className="text-yellow-300" /> 
-    },
-    { 
-      title: "Mastery Event Branding", 
-      desc: "Sukses mengelola identitas visual event besar (Summer Camp & Tabungan WOW! Gold) dari skala panggung hingga merchandise.", 
-      icon: <Sparkles className="text-[#054fa0]" /> 
-    },
-    { 
-      title: "Transformasi Persepsi", 
-      desc: "Berhasil mengubah citra bank dari 'kaku' menjadi 'humble & accessible' di mata nasabah melalui gaya Memphis Corporate Flex.", 
-      icon: <Users2 className="text-red-600" /> 
-    }
-  ]
-}
-    },
-    "2026": {
-  year: "Jan 2026 - Present",
-  theme: "DYNAMIC AUTHENTICITY",
-  description: "Evolusi dari sekadar 'rapi' menjadi 'nyata'. Fokus pada optimasi kualitas visual dan kedekatan emosional melalui narasi manusia.",
-  solution: {
-    points: [
-      { 
-        title: "Tantangan Utama", 
-        desc: "Visual mulai terasa monoton (over-branded biru) dan terkesan 'robot' karena struktur yang terlalu kaku.", 
-        icon: <ShieldAlert className="text-red-500" /> 
-      },
-      { 
-        title: "Style Desain Baru", 
-        desc: "Pengadaan Style 'Photograph Studio Corporate' untuk menggantikan dominasi elemen grafis flat dan kaku.", 
-        icon: <Camera className="text-[#054fa0]" /> 
-      },
-      { 
-        title: "Program Strategis", 
-        desc: "Pengajuan program 'Warung Literasi' sebagai wadah edukasi finansial yang lebih grounded dan relatable.", 
-        icon: <MessageSquare className="text-yellow-300" /> 
-      },
-      { 
-        title: "Evolusi AI-Based", 
-        desc: "Integrasi Gemini, Remini, hingga Capcut AI untuk mencapai kualitas visual high-end di tengah keterbatasan fasilitas.", 
-        icon: <Sparkles className="text-emerald-500" /> 
-      }
-    ]
-  },
-  execution: {
-    points: [
-      { 
-        title: "Quality Over Quantity", 
-        desc: "Reduksi kapasitas banner UMKM (dari 10 menjadi 3-5/minggu) untuk fokus pada detail desain yang lebih kompleks.", 
-        icon: <Zap className="text-yellow-300" /> 
-      },
-      { 
-        title: "Photo Manipulation", 
-        desc: "Mengurangi blok warna masif dan mulai fokus pada teknik manipulasi foto agar visual terasa lebih hidup & dinamis.", 
-        icon: <Layout className="text-[#054fa0]" /> 
-      },
-      { 
-        title: "AI Workflows", 
-        desc: "Implementasi AI untuk relighting & upscaling foto nasabah asli guna menunjang style Studio Corporate.", 
-        icon: <Sparkles className="text-red-600" /> 
-      },
-      { 
-        title: "Warung Literasi", 
-        desc: "Eksekusi perdana konten literasi dengan pendekatan visual story-telling yang lebih manusiawi.", 
-        icon: <MessageSquare size={14} className="text-slate-400" /> 
-      }
-    ]
-  },
-  achievement: {
-  points: [
-    { 
-      title: "Visual Breakthrough", 
-      desc: "Berhasil mematahkan dominasi gaya 'robot' yang monoton dengan estetika Studio Corporate yang lebih segar dan dinamis.", 
-      icon: <Zap className="text-yellow-300" /> 
-    },
-    { 
-      title: "AI Workflow Synergy", 
-      desc: "Mencapai standar visual high-end secara konsisten melalui integrasi alat AI (Gemini, Remini, Capcut) di tengah keterbatasan fasilitas.", 
-      icon: <Sparkles className="text-emerald-500" /> 
-    }
-  ]
-}
-}
-  };
-
-  const current = data[activePhase as keyof typeof data];
-  const modeData = current[activeMode as keyof typeof current] as { points: { title: string, desc: string, icon: React.ReactNode }[] };
+  const [activeTab, setActiveTab] = useState(0);
+  const data = phaseArtaData[activeTab];
 
   return (
-    <section className="w-full py-24 bg-slate-50 border-y border-slate-100">
+    <section className="w-full py-16 lg:py-32 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
         
-        {/* Main Phase Switcher */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
-          <div className="text-center md:text-left">
-            <h3 className="text-4xl font-black text-slate-900 tracking-tighter uppercase italic">
-              {current.theme}
-            </h3>
-            <p className="text-[10px] font-black text-[#054fa0] tracking-[0.4em] uppercase mt-2 italic">{current.year}</p>
+        {/* 1. SWITCHER: Mobile-Friendly Buttons */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div>
+            <h2 className="text-sm font-black tracking-[0.3em] text-[#054fa0] uppercase mb-2">Project Roadmap</h2>
+            <p className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tighter">Strategic Evolution</p>
           </div>
           
-          <div className="flex bg-slate-200/50 p-1.5 rounded-2xl border border-slate-200">
-            {["2024", "2026"].map((year) => (
-              <button 
-                key={year}
-                onClick={() => { setActivePhase(year); setActiveMode('solution'); }}
-                className={`px-8 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all ${activePhase === year ? 'bg-[#054fa0] text-white shadow-lg' : 'text-slate-400 hover:text-slate-600'}`}
+          <div className="flex bg-slate-200 p-1.5 rounded-2xl lg:rounded-3xl">
+            {phaseArtaData.map((phase, index) => (
+              <button
+                key={phase.id}
+                onClick={() => setActiveTab(index)}
+                className={`px-6 lg:px-10 py-3 lg:py-4 rounded-xl lg:rounded-2xl text-xs lg:text-sm font-black transition-all duration-500 ${
+                  activeTab === index 
+                  ? "bg-white text-[#054fa0] shadow-xl scale-100" 
+                  : "text-slate-500 hover:text-slate-700 scale-95"
+                }`}
               >
-                {year === "2024" ? "Phase I: 2024 - 2025" : "Phase II: 2026"}
+                {phase.year.split(' – ')[0]} {/* Ambil tahun depannya aja biar ringkas */}
               </button>
             ))}
           </div>
         </div>
 
-        {/* Deep Dive Switcher */}
-        <div className="flex justify-center flex-wrap gap-2 mb-12">
-          {[
-            { id: 'solution', label: 'Tantangan & Solusi', icon: <Briefcase size={14}/> },
-            { id: 'execution', label: 'Eksekusi Strategis', icon: <Zap size={14}/> },
-            { id: 'achievement', label: 'Hasil & Prestasi', icon: <Award size={14}/> }
-          ].map((mode) => (
-            <button
-              key={mode.id}
-              onClick={() => setActiveMode(mode.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-full border text-[10px] font-black uppercase tracking-widest transition-all ${activeMode === mode.id ? 'bg-[#054fa0] border-[#054fa0] text-white shadow-md' : 'bg-white border-slate-200 text-slate-400 hover:text-slate-600'}`}
-            >
-              {mode.icon} {mode.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Dynamic Display Grid */}
-        <div className="bg-white rounded-[3.5rem] p-8 lg:p-16 shadow-2xl shadow-slate-200/40 border border-slate-100 min-h-[400px] flex items-center transition-all duration-500">
-          <div className="grid md:grid-cols-2 gap-8 w-full animate-in fade-in zoom-in-95 duration-700">
-            {modeData.points.map((point, i) => (
-              <div key={i} className="flex flex-col gap-6 p-10 rounded-[2.5rem] bg-slate-50/50 border border-slate-100 group hover:border-[#054fa0] transition-all">
-                <div className="w-12 h-12 bg-white rounded-2xl shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform border border-slate-100">
-                  {point.icon}
-                </div>
-                <div>
-                  <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">{point.title}</h4>
-                  <p className="text-lg font-bold text-slate-900 tracking-tight leading-relaxed italic">"{point.desc}"</p>
-                </div>
-              </div>
-            ))}
+        {/* 2. MAIN CONTENT GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+          
+          {/* KIRI: VISI & TEMA */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-[#054fa0] inline-block px-4 py-1 rounded-full">
+              <span className="text-[10px] font-bold text-white uppercase tracking-widest">{data.theme}</span>
+            </div>
+            <h3 className="text-4xl lg:text-6xl font-black text-slate-900 leading-[0.9] tracking-tighter">
+              {data.theme}
+            </h3>
+            <p className="text-lg lg:text-xl text-slate-600 font-medium italic border-l-4 border-slate-300 pl-6">
+              "{data.vision}"
+            </p>
           </div>
-        </div>
 
+          {/* KANAN: TANTANGAN & SOLUSI */}
+<div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-10">
+  
+  {/* Seksi Tantangan List */}
+  <div className="space-y-6">
+    <div className="flex items-center gap-2 text-red-500">
+      <AlertCircle size={20} className="shrink-0" />
+      <span className="font-black uppercase tracking-widest text-xs text-slate-400">Tantangan Utama</span>
+    </div>
+    <ul className="space-y-5">
+      {data.challenges.map((item, i) => (
+        <li key={i} className="flex gap-3 group">
+          {/* Custom Bullet Point untuk Tantangan: Garis Merah Kecil */}
+          <div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0 group-hover:scale-150 transition-transform duration-300" />
+          <p className="text-sm lg:text-base text-slate-600 font-medium leading-relaxed">
+            {item}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Seksi Solusi List */}
+  <div className="space-y-6">
+    <div className="flex items-center gap-2 text-emerald-500">
+      <CheckCircle2 size={20} className="shrink-0" />
+      <span className="font-black uppercase tracking-widest text-xs text-slate-400">Solusi Strategis</span>
+    </div>
+    <ul className="space-y-4">
+      {data.solutions.map((item, i) => (
+        <li key={i} className="flex gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md hover:border-emerald-100 transition-all duration-300 group">
+          {/* Custom Bullet Point untuk Solusi: Ikon Ceklis Kecil */}
+          <div className="bg-emerald-50 p-1 rounded-full h-fit mt-0.5 group-hover:bg-emerald-500 transition-colors duration-300">
+            <CheckCircle2 size={12} className="text-emerald-500 group-hover:text-white" />
+          </div>
+          <p className="text-sm lg:text-[15px] text-slate-900 font-bold leading-snug">
+            {item}
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+</div>
+        </div>
+        {/* 3. PRODUCT HIGHLIGHT: Muncul di bawah Grid */}
+<div className="mt-16 pt-10 border-t border-slate-200">
+  <div className="flex items-center gap-3 mb-8">
+    <Zap size={20} className="text-yellow-500 fill-yellow-500" />
+    <span className="font-black uppercase tracking-[0.2em] text-xs text-slate-400">Key Deliverables</span>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+    {data.products.map((prod, i) => (
+      <div key={i} className="group bg-[#054fa0] p-6 rounded-[2rem] transition-all duration-500 hover:-translate-y-2 shadow-xl shadow-blue-900/10">
+        <p className="text-[10px] font-black text-blue-300 uppercase tracking-widest mb-1">
+          {prod.label}
+        </p>
+        <p className="text-xl lg:text-2xl font-black text-white leading-tight">
+          {prod.value}
+        </p>
+        
+        {/* Dekorasi kecil biar nggak sepi */}
+        <div className="mt-4 w-10 h-1 bg-white/20 group-hover:w-full transition-all duration-700" />
       </div>
+    ))}
+  </div>
+</div>
+      </div>
+      
     </section>
   );
 };
