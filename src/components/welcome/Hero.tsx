@@ -4,15 +4,14 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    // overflow-x-hidden buat jaga-jaga ticker
     <section className="relative w-full h-auto lg:h-screen bg-white overflow-x-hidden flex flex-col selection:bg-yellow-400">
       
       {/* 1. PEMBUNGKUS UTAMA */}
-      {/* pt-16 di mobile biar mepet navbar, -mt-24 di desktop */}
-      <div className="w-full max-w-[1800px] mx-auto px-6 lg:px-20 flex flex-col lg:grid lg:grid-cols-12 relative z-10 pt-16 lg:pt-0 lg:-mt-24 lg:flex-1">
+      {/* min-h-screen di mobile biar kontennya lega, flex-col biar urut atas-bawah */}
+      <div className="w-full max-w-[1800px] mx-auto flex flex-col lg:grid lg:grid-cols-12 relative z-10 pt-20 lg:pt-0 lg:-mt-24 lg:flex-1">
         
         {/* --- BAGIAN A: HIMPUNAN TEXT --- */}
-        <div className="lg:col-span-7 flex flex-col justify-center items-start pt-6 lg:pt-0">
+        <div className="lg:col-span-7 flex flex-col justify-center items-start px-6 lg:px-20 pt-6 lg:pt-0">
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -38,32 +37,24 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* --- BAGIAN B: HIMPUNAN OBJEK (ULTRA CLEAN) --- */}
-        {/* mt-[-40px] di mobile buat narik foto ke arah teks */}
-        <div className="lg:col-span-5 relative flex items-end justify-center lg:justify-center mt-[-40px] lg:mt-0 h-[60vh] lg:h-full">
-          
-          <div className="relative w-full max-w-[450px] lg:max-w-[500px] h-full flex items-end justify-center">
-            
-            {/* SHAPE KUNING: TOTAL DELETED / COMMENTED OUT */}
-            {/* <div className="hidden lg:block absolute bottom-[15%] left-1/2 -translate-x-1/2 w-[110%] aspect-square bg-yellow-400 rounded-full z-0 shadow-2xl rotate-[-5deg] scale-[0.8] origin-bottom transition-all duration-500" /> */}
-            
-            {/* FOTO ANGGA: Tetap Gagah Berdiri Sendiri */}
+        {/* --- BAGIAN B: HIMPUNAN OBJEK (FOTO) --- */}
+        {/* Kita pake padding top (pt-8) buat ngasih jarak fisik dari teks di atasnya */}
+        <div className="lg:col-span-5 relative flex items-end justify-center pt-8 lg:pt-0 h-[45vh] lg:h-full overflow-hidden">
+          <div className="relative w-full max-w-[400px] lg:max-w-[500px] h-full flex items-end justify-center">
             <div className="relative w-full h-full z-10">
               <NextImage 
                 src="/foto-angga.png" 
                 alt="Angga Photo"
                 fill
-                className="object-contain object-bottom origin-bottom scale-[1.2] lg:scale-[1.0]"
+                className="object-contain object-bottom origin-bottom scale-[1.1] lg:scale-[1.0]"
                 priority
               />
             </div>
           </div>
-
         </div>
       </div>
 
       {/* --- BAGIAN C: TICKER --- */}
-      {/* Ticker nempel tepat di bawah foto */}
       <div className="relative lg:absolute lg:bottom-0 left-0 w-full bg-yellow-400 py-3 lg:py-6 border-y-2 border-emerald-900 overflow-hidden z-40">
         <div className="flex animate-marquee whitespace-nowrap">
           {[1, 2, 3].map((i) => (

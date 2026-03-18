@@ -13,7 +13,7 @@ export const projectsData = [
   { 
     title: "BPR Arta Utama", 
     slug: "arta-utama", 
-    category: "Corporate Identity", 
+    category: "Corporate Identity Design", 
     year: "2024 — 2026",
     icon: "Briefcase",
     size: "md:col-span-2 md:row-span-2",
@@ -23,7 +23,7 @@ export const projectsData = [
   { 
     title: "Tabakery", 
     slug: "tabakery",
-    category: "ERP System & Strategy", 
+    category: "UI/UX Design", 
     year: "2024 — 2026",
     icon: "Rocket",
     size: "md:col-span-1 md:row-span-1",
@@ -33,7 +33,7 @@ export const projectsData = [
   { 
     title: "IPM Pekalongan", 
     slug: "ipm-pekalongan",
-    category: "Organizational Framework", 
+    category: "Social Media Design", 
     year: "2024 — 2025",
     icon: "Users",
     size: "md:col-span-1 md:row-span-2",
@@ -43,7 +43,7 @@ export const projectsData = [
   { 
     title: "Haha Rice Bowl", 
     slug: "haharicebowl",
-    category: "Full Brand Identity", 
+    category: "Full - Identity Design", 
     year: "2023",
     icon: "Utensils", 
     size: "md:col-span-2 md:row-span-1",
